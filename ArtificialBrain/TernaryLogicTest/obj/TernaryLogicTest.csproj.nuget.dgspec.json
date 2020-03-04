@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_work\\AI\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj": {}
+    "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj": {}
   },
   "projects": {
-    "C:\\_work\\AI\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj": {
+    "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_work\\AI\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj",
+        "projectUniqueName": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj",
         "projectName": "TernaryLogicTest",
-        "projectPath": "C:\\_work\\AI\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj",
+        "projectPath": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogicTest\\TernaryLogicTest.csproj",
         "packagesPath": "C:\\Users\\zsolt\\.nuget\\packages\\",
-        "outputPath": "C:\\_work\\AI\\ArtificialBrain\\TernaryLogicTest\\obj\\",
+        "outputPath": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogicTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -33,8 +33,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\_work\\AI\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj": {
-                "projectPath": "C:\\_work\\AI\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj"
+              "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj": {
+                "projectPath": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\_work\\AI\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj": {
+    "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_work\\AI\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj",
+        "projectUniqueName": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj",
         "projectName": "TernaryLogic",
-        "projectPath": "C:\\_work\\AI\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj",
+        "projectPath": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogic\\TernaryLogic.csproj",
         "packagesPath": "C:\\Users\\zsolt\\.nuget\\packages\\",
-        "outputPath": "C:\\_work\\AI\\ArtificialBrain\\TernaryLogic\\obj\\",
+        "outputPath": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\TernaryLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

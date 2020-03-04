@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_work\\AI\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj": {}
+    "C:\\_work\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj": {}
   },
   "projects": {
-    "C:\\_work\\AI\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj": {
+    "C:\\_work\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_work\\AI\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj",
+        "projectUniqueName": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj",
         "projectName": "ArtificialBrain",
-        "projectPath": "C:\\_work\\AI\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj",
+        "projectPath": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain.csproj",
         "packagesPath": "C:\\Users\\zsolt\\.nuget\\packages\\",
-        "outputPath": "C:\\_work\\AI\\ArtificialBrain\\ArtificialBrain\\obj\\",
+        "outputPath": "C:\\_work\\ArtificialBrain\\ArtificialBrain\\ArtificialBrain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
