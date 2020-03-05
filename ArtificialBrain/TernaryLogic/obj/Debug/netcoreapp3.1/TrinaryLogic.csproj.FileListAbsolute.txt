@@ -1,0 +1,8 @@
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\bin\Debug\netcoreapp3.1\TrinaryLogic.deps.json
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\bin\Debug\netcoreapp3.1\TrinaryLogic.dll
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\bin\Debug\netcoreapp3.1\TrinaryLogic.pdb
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\obj\Debug\netcoreapp3.1\TrinaryLogic.csprojAssemblyReference.cache
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\obj\Debug\netcoreapp3.1\TrinaryLogic.AssemblyInfoInputs.cache
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\obj\Debug\netcoreapp3.1\TrinaryLogic.AssemblyInfo.cs
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\obj\Debug\netcoreapp3.1\TrinaryLogic.dll
+C:\Users\zsolt\OneDrive\AI\ArtificialBrain\TrinaryLogic\obj\Debug\netcoreapp3.1\TrinaryLogic.pdb
