@@ -1,4 +1,6 @@
- 
+#ifndef TBIT_H
+#define TBIT_H
+
 enum TernaryBit : signed char{
     TRUE = 1,
     MAIBY = 0,
@@ -17,7 +19,9 @@ struct Tbit
 
         Tbit& operator= (const int& a);
         Tbit& operator= (const Tbit& a);
-        Tbit& operator== (const Tbit& operand);
-        Tbit& operator!= (const Tbit& operand); 
-        Tbit& operator! ();
+        Tbit operator== (const Tbit& operand);
+        Tbit operator!= (const Tbit& operand); 
+        Tbit operator! ();
 };
+
+#endif

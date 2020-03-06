@@ -27,13 +27,12 @@ Tbit &Tbit::operator=(const Tbit &a)
     return *this;
 }
 
-Tbit &Tbit::operator!()
+Tbit Tbit::operator!()
 {
-    bit = TernaryBit(bit * -1);
-    return *this;
+    return Tbit(bit * -1);
 }
 
-Tbit &Tbit::operator==(const Tbit &operand)
+Tbit Tbit::operator==(const Tbit &operand)
 {
     TernaryBit res;
     if (bit == MAIBY)
@@ -44,11 +43,10 @@ Tbit &Tbit::operator==(const Tbit &operand)
         res = TRUE;
     if (operand.bit != bit)
         res = FALSE;
-    this->bit = res;
-    return *this;
+    return Tbit(res);
 }
 
-Tbit &Tbit::operator!=(const Tbit &operand)
+Tbit Tbit::operator!=(const Tbit &operand)
 {
     return !(*this == operand);
 }
