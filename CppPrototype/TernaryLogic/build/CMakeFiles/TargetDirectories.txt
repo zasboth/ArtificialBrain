@@ -28,6 +28,7 @@ C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/ContinuousBu
 C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/ContinuousTest.dir
 C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/ContinuousCoverage.dir
 C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/TernaryLogic.dir
+C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/utest.dir
 C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/package.dir
 C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/test.dir
 C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/edit_cache.dir

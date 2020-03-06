@@ -537,6 +537,73 @@ TernaryLogic/fast:
 	$(MAKE) -f CMakeFiles/TernaryLogic.dir/build.make CMakeFiles/TernaryLogic.dir/build
 .PHONY : TernaryLogic/fast
 
+#=============================================================================
+# Target rules for targets named utest
+
+# Build rule for target.
+utest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 utest
+.PHONY : utest
+
+# fast build rule for target.
+utest/fast:
+	$(MAKE) -f CMakeFiles/utest.dir/build.make CMakeFiles/utest.dir/build
+.PHONY : utest/fast
+
+Tbit.obj: Tbit.cpp.obj
+
+.PHONY : Tbit.obj
+
+# target to build an object file
+Tbit.cpp.obj:
+	$(MAKE) -f CMakeFiles/TernaryLogic.dir/build.make CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj
+.PHONY : Tbit.cpp.obj
+
+Tbit.i: Tbit.cpp.i
+
+.PHONY : Tbit.i
+
+# target to preprocess a source file
+Tbit.cpp.i:
+	$(MAKE) -f CMakeFiles/TernaryLogic.dir/build.make CMakeFiles/TernaryLogic.dir/Tbit.cpp.i
+.PHONY : Tbit.cpp.i
+
+Tbit.s: Tbit.cpp.s
+
+.PHONY : Tbit.s
+
+# target to generate assembly for a file
+Tbit.cpp.s:
+	$(MAKE) -f CMakeFiles/TernaryLogic.dir/build.make CMakeFiles/TernaryLogic.dir/Tbit.cpp.s
+.PHONY : Tbit.cpp.s
+
+TbitTest.obj: TbitTest.cpp.obj
+
+.PHONY : TbitTest.obj
+
+# target to build an object file
+TbitTest.cpp.obj:
+	$(MAKE) -f CMakeFiles/utest.dir/build.make CMakeFiles/utest.dir/TbitTest.cpp.obj
+.PHONY : TbitTest.cpp.obj
+
+TbitTest.i: TbitTest.cpp.i
+
+.PHONY : TbitTest.i
+
+# target to preprocess a source file
+TbitTest.cpp.i:
+	$(MAKE) -f CMakeFiles/utest.dir/build.make CMakeFiles/utest.dir/TbitTest.cpp.i
+.PHONY : TbitTest.cpp.i
+
+TbitTest.s: TbitTest.cpp.s
+
+.PHONY : TbitTest.s
+
+# target to generate assembly for a file
+TbitTest.cpp.s:
+	$(MAKE) -f CMakeFiles/utest.dir/build.make CMakeFiles/utest.dir/TbitTest.cpp.s
+.PHONY : TbitTest.cpp.s
+
 TernaryLogic.obj: TernaryLogic.cpp.obj
 
 .PHONY : TernaryLogic.obj
@@ -604,6 +671,13 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... TernaryLogic"
+	@echo "... utest"
+	@echo "... Tbit.obj"
+	@echo "... Tbit.i"
+	@echo "... Tbit.s"
+	@echo "... TbitTest.obj"
+	@echo "... TbitTest.i"
+	@echo "... TbitTest.s"
 	@echo "... TernaryLogic.obj"
 	@echo "... TernaryLogic.i"
 	@echo "... TernaryLogic.s"

@@ -71,6 +71,7 @@ CMAKE_BINARY_DIR = C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build
 
 # The main recursive "all" target.
 all: CMakeFiles/TernaryLogic.dir/all
+all: CMakeFiles/utest.dir/all
 
 .PHONY : all
 
@@ -109,6 +110,7 @@ clean: CMakeFiles/ContinuousBuild.dir/clean
 clean: CMakeFiles/ContinuousTest.dir/clean
 clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/TernaryLogic.dir/clean
+clean: CMakeFiles/utest.dir/clean
 
 .PHONY : clean
 
@@ -875,12 +877,12 @@ CMakeFiles/ContinuousCoverage.dir/clean:
 CMakeFiles/TernaryLogic.dir/all:
 	$(MAKE) -f CMakeFiles/TernaryLogic.dir/build.make CMakeFiles/TernaryLogic.dir/depend
 	$(MAKE) -f CMakeFiles/TernaryLogic.dir/build.make CMakeFiles/TernaryLogic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles --progress-num=1,2 "Built target TernaryLogic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles --progress-num=1,2,3 "Built target TernaryLogic"
 .PHONY : CMakeFiles/TernaryLogic.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TernaryLogic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TernaryLogic.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles 0
 .PHONY : CMakeFiles/TernaryLogic.dir/rule
@@ -894,6 +896,33 @@ TernaryLogic: CMakeFiles/TernaryLogic.dir/rule
 CMakeFiles/TernaryLogic.dir/clean:
 	$(MAKE) -f CMakeFiles/TernaryLogic.dir/build.make CMakeFiles/TernaryLogic.dir/clean
 .PHONY : CMakeFiles/TernaryLogic.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/utest.dir
+
+# All Build rule for target.
+CMakeFiles/utest.dir/all:
+	$(MAKE) -f CMakeFiles/utest.dir/build.make CMakeFiles/utest.dir/depend
+	$(MAKE) -f CMakeFiles/utest.dir/build.make CMakeFiles/utest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles --progress-num=4,5 "Built target utest"
+.PHONY : CMakeFiles/utest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/utest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/utest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles 0
+.PHONY : CMakeFiles/utest.dir/rule
+
+# Convenience name for target.
+utest: CMakeFiles/utest.dir/rule
+
+.PHONY : utest
+
+# clean rule for target.
+CMakeFiles/utest.dir/clean:
+	$(MAKE) -f CMakeFiles/utest.dir/build.make CMakeFiles/utest.dir/clean
+.PHONY : CMakeFiles/utest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

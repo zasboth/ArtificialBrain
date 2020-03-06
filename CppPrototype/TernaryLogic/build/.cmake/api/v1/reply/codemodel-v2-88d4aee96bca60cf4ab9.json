@@ -42,7 +42,8 @@
 						25,
 						26,
 						27,
-						28
+						28,
+						29
 					]
 				}
 			],
@@ -85,7 +86,8 @@
 						25,
 						26,
 						27,
-						28
+						28,
+						29
 					]
 				}
 			],
@@ -290,8 +292,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TernaryLogic::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TernaryLogic-Debug-e5e9190978623e7e5e93.json",
+					"jsonFile" : "target-TernaryLogic-Debug-e6267ed6cc5884aa0536.json",
 					"name" : "TernaryLogic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "utest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-utest-Debug-62cb3607047fb019a12f.json",
+					"name" : "utest",
 					"projectIndex" : 0
 				}
 			]

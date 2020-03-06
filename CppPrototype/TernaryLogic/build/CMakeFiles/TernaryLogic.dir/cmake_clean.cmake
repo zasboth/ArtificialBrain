@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj"
   "CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.obj"
   "libTernaryLogic.a"
   "libTernaryLogic.pdb"

@@ -7,19 +7,17 @@ enum TernaryBit : signed char{
 
 struct Tbit
 {
-    private TernaryBit bit;
+    private: 
+        TernaryBit bit;
 
-    public Tbit( int a);
+    public:
+        Tbit();
+        Tbit( int a);
+        Tbit(TernaryBit bit_);
 
-    public Tbit(TernaryBit bit_);
-    
-    public Tbit& operator= (const int& a);
-
-    public Tbit& operator= (const Tbit& a);
-
-    public bool& operator== (const Tbit& operand);
-
-    public bool& operator!= (const Tbit& operand);
-
-    public Tbit& operator! ();
+        Tbit& operator= (const int& a);
+        Tbit& operator= (const Tbit& a);
+        Tbit& operator== (const Tbit& operand);
+        Tbit& operator!= (const Tbit& operand); 
+        Tbit& operator! ();
 };

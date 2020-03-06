@@ -1,9 +1,13 @@
 #include "Tbit.h"
-#include <stdlib.h>
+
+Tbit::Tbit()
+{
+    bit = MAIBY;
+}
 
 Tbit::Tbit(int a)
 {
-    bit = (a > 0) - (a < 0);
+    bit = TernaryBit((a > 0) - (a < 0));
 }
 
 Tbit::Tbit(TernaryBit bit_)
@@ -13,32 +17,38 @@ Tbit::Tbit(TernaryBit bit_)
 
 Tbit &Tbit::operator=(const int &a)
 {
-    return Tbit(a);
+    bit = TernaryBit((a > 0) - (a < 0));
+    return *this;
 }
 
-Tbit &Tbit::operator=(const TernaryBit &a)
+Tbit &Tbit::operator=(const Tbit &a)
 {
     bit = a.bit;
+    return *this;
 }
 
 Tbit &Tbit::operator!()
 {
-    return bit * -1;
+    bit = TernaryBit(bit * -1);
+    return *this;
 }
 
 Tbit &Tbit::operator==(const Tbit &operand)
 {
+    TernaryBit res;
     if (bit == MAIBY)
-        return TRUE;
+        res = TRUE;
     if (operand.bit == MAIBY)
-        return MAIBY;
+        res = MAIBY;
     if (bit == operand.bit)
-        return TRUE;
+        res = TRUE;
     if (operand.bit != bit)
-        return FALSE;
+        res = FALSE;
+    this->bit = res;
+    return *this;
 }
 
 Tbit &Tbit::operator!=(const Tbit &operand)
 {
-    return !(this == operand);
+    return !(*this == operand);
 }

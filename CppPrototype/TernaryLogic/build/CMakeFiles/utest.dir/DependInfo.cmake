@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.cpp" "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj"
-  "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TernaryLogic.cpp" "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.obj"
+  "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TbitTest.cpp" "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles/utest.dir/TbitTest.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

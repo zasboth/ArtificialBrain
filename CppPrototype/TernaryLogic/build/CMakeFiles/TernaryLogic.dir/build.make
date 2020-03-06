@@ -87,17 +87,32 @@ CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.s"
 	C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/i686-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TernaryLogic.cpp -o CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.s
 
+CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj: CMakeFiles/TernaryLogic.dir/flags.make
+CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj: ../Tbit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj"
+	C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/i686-w64-mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj -c C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.cpp
+
+CMakeFiles/TernaryLogic.dir/Tbit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TernaryLogic.dir/Tbit.cpp.i"
+	C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/i686-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.cpp > CMakeFiles/TernaryLogic.dir/Tbit.cpp.i
+
+CMakeFiles/TernaryLogic.dir/Tbit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TernaryLogic.dir/Tbit.cpp.s"
+	C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/i686-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.cpp -o CMakeFiles/TernaryLogic.dir/Tbit.cpp.s
+
 # Object files for target TernaryLogic
 TernaryLogic_OBJECTS = \
-"CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.obj"
+"CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.obj" \
+"CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj"
 
 # External object files for target TernaryLogic
 TernaryLogic_EXTERNAL_OBJECTS =
 
 libTernaryLogic.a: CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.obj
+libTernaryLogic.a: CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj
 libTernaryLogic.a: CMakeFiles/TernaryLogic.dir/build.make
 libTernaryLogic.a: CMakeFiles/TernaryLogic.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libTernaryLogic.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libTernaryLogic.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/TernaryLogic.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TernaryLogic.dir/link.txt --verbose=$(VERBOSE)
 

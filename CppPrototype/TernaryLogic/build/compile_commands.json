@@ -3,5 +3,15 @@
   "directory": "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build",
   "command": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/i686-w64-mingw32-g++.exe    -g   -o CMakeFiles/TernaryLogic.dir/TernaryLogic.cpp.obj -c C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TernaryLogic.cpp",
   "file": "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TernaryLogic.cpp"
+},
+{
+  "directory": "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build",
+  "command": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/i686-w64-mingw32-g++.exe    -g   -o CMakeFiles/TernaryLogic.dir/Tbit.cpp.obj -c C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.cpp",
+  "file": "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.cpp"
+},
+{
+  "directory": "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/build",
+  "command": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/i686-w64-mingw32-g++.exe    -g   -o CMakeFiles/utest.dir/TbitTest.cpp.obj -c C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TbitTest.cpp",
+  "file": "C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TbitTest.cpp"
 }
 ]

@@ -89,4 +89,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ContinuousTest.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousCoverage.dir/DependInfo.cmake"
   "CMakeFiles/TernaryLogic.dir/DependInfo.cmake"
+  "CMakeFiles/utest.dir/DependInfo.cmake"
   )

@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/TernaryLogic.cpp
-iostream
--
+C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.cpp
+Tbit.h
+C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.h
+
+C:/_work/ArtificialBrain/CppPrototype/TernaryLogic/Tbit.h
 
