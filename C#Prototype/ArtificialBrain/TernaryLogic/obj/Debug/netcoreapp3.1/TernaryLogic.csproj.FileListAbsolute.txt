@@ -1,8 +1,0 @@
-C:\_work\AI\ArtificialBrain\TernaryLogic\obj\Debug\netcoreapp3.1\TernaryLogic.AssemblyInfoInputs.cache
-C:\_work\AI\ArtificialBrain\TernaryLogic\obj\Debug\netcoreapp3.1\TernaryLogic.AssemblyInfo.cs
-C:\_work\AI\ArtificialBrain\TernaryLogic\bin\Debug\netcoreapp3.1\TernaryLogic.deps.json
-C:\_work\AI\ArtificialBrain\TernaryLogic\bin\Debug\netcoreapp3.1\TernaryLogic.dll
-C:\_work\AI\ArtificialBrain\TernaryLogic\bin\Debug\netcoreapp3.1\TernaryLogic.pdb
-C:\_work\AI\ArtificialBrain\TernaryLogic\obj\Debug\netcoreapp3.1\TernaryLogic.dll
-C:\_work\AI\ArtificialBrain\TernaryLogic\obj\Debug\netcoreapp3.1\TernaryLogic.pdb
-C:\_work\AI\ArtificialBrain\TernaryLogic\obj\Debug\netcoreapp3.1\TernaryLogic.csprojAssemblyReference.cache
