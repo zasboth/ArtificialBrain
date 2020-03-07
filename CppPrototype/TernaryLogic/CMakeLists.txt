@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.15.0)
 project(TernaryLogic VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
 
+link_directories(${CMAKE_SOURCE_DIR}/lib)
 
 add_library(TernaryLogic 
-    TernaryLogic.cpp
     Tbit.h
     Tbit.cpp
 )
