@@ -9,6 +9,10 @@ TEST(TbitTest, Create){
    ASSERT_FALSE(tbit == nullptr); 
 }
 
-TEST(TbitTest, foo){
-   ASSERT_FALSE(true); 
+TEST(TbitTest, Create_with_equal){
+   //Tbit eq(TernaryBit::TRUE);
+   Tbit bit = 60;
+   //cout << "eq: " <<  eq.getBit() << endl;
+   cout << "bit: " <<  bit.getBit() << endl;
+   ASSERT_TRUE(bit.getBit() == TRUE);
 }

@@ -5,7 +5,7 @@ enable_testing()
 
 include_directories(
 	TernaryLogic
-	lib/googletest
+	lib
 )
 
 add_subdirectory(lib/googletest)
