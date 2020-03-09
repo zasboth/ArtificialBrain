@@ -4,9 +4,7 @@
 
 using namespace std;
 
-int main()
-{
-    Tbit tbit;
-    
-    return 0;
+TEST(TbitTest, Create){
+   Tbit tbit();
+   ASSERT_FALSE(tbit == nullptr); 
 }

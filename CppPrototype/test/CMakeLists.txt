@@ -4,6 +4,7 @@ enable_testing()
 
 
 set(Sources
+	main.cpp
     TbitTest.cpp
 )
 
