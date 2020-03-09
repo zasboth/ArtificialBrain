@@ -5,3 +5,6 @@ add_library(TernaryLogic STATIC
     tbit.cpp
 )
 
+target_include_directories(TernaryLogic PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)

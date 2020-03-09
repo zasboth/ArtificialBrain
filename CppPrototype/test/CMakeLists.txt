@@ -14,6 +14,6 @@ add_test(NAME tester
 	COMMAND tester)
 
 target_link_libraries(tester
-	TernaryLogic_lib
+	TernaryLogic
 	gtest
 )

@@ -3,7 +3,10 @@ project(TernaryLogic VERSION 0.1.0)
 
 enable_testing()
 
-include_directories(TernaryLogic)
+include_directories(
+	TernaryLogic
+	lib/googletest
+)
 
 add_subdirectory(lib/googletest)
 add_subdirectory(TernaryLogic)
