@@ -11,19 +11,22 @@ struct Tbit
 {
     private: 
         TernaryBit bit;
-        void calcBit(int a, unsigned int treshold);
+        double treshold = 0;
+        void calcBit(double a);
 
     public:
         Tbit();
-        Tbit( int a);
-        Tbit( int a, unsigned int treshold);
+        Tbit( double a);
+        Tbit( double a, double treshold);
         Tbit(TernaryBit bit_): bit(bit_){};
         ~Tbit();
 
         Tbit compare(const Tbit val);
         TernaryBit getBit() {return bit;}
+        double getTreshold() {return treshold;}
+        void setTreshold(double value);
 
-        Tbit operator= (const int& a);
+        Tbit operator= (const double& a);
         Tbit operator= (const Tbit& a);
         Tbit operator= (const TernaryBit& a);
         bool operator== (const Tbit& operand);

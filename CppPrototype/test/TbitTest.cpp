@@ -10,9 +10,13 @@ TEST(TbitTest, Create){
 }
 
 TEST(TbitTest, Create_with_equal){
-   //Tbit eq(TernaryBit::TRUE);
+   Tbit eq(TernaryBit::TRUE);
    Tbit bit = 60;
-   //cout << "eq: " <<  eq.getBit() << endl;
-   cout << "bit: " <<  bit.getBit() << endl;
-   ASSERT_TRUE(bit.getBit() == TRUE);
+   ASSERT_TRUE(bit.getBit() == eq.getBit());
+   eq = MAIBY;
+   bit = 0;
+   ASSERT_TRUE(bit.getBit() == eq.getBit());
+   eq = FALSE;
+   bit = -5;
+   ASSERT_TRUE(bit.getBit() == eq.getBit());
 }

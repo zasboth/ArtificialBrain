@@ -1,28 +1,37 @@
 #include "Tbit.h"
+#include <iostream>
 
-void Tbit::calcBit(int a, unsigned int treshold)
-{
-    bit = TernaryBit((a > treshold) - (a < treshold));
-}
 
 Tbit::~Tbit()
 {
 
 }
 
-Tbit::Tbit()
+Tbit::Tbit(): bit(MAIBY)
 {
-    bit = MAIBY;
 }
 
-Tbit::Tbit(int a, unsigned int treshold)
+Tbit::Tbit(double a, double treshold)
 {
-    calcBit(a, treshold);
+    setTreshold(treshold);
+    calcBit(a);
 }
 
-Tbit::Tbit(int a)
+Tbit::Tbit(double a)
 {
-    Tbit(a, 0);
+    this->calcBit(a);
+}
+
+void Tbit::calcBit(double a)
+{
+    signed char result = (a > treshold) - (a < (treshold*-1));
+    this->bit = TernaryBit(result);
+}
+
+void Tbit::setTreshold(double value)
+{
+    if (value < 0) throw ("Treshold is a positive number or zero!");
+    treshold = value;
 }
 
 Tbit Tbit::compare(const Tbit val)
@@ -39,9 +48,9 @@ Tbit Tbit::compare(const Tbit val)
     return Tbit(res);
 }
 
-Tbit Tbit::operator=(const int &a)
+Tbit Tbit::operator=(const double &a)
 {
-    calcBit(a, 0);
+    calcBit(a);
     return *this;
 }
 
