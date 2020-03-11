@@ -5,8 +5,8 @@
 using namespace std;
 
 TEST(TbitTest, Create){
-   Tbit tbit();
-   ASSERT_FALSE(tbit == nullptr); 
+   Tbit tbit;
+   ASSERT_TRUE(tbit.getBit() == MAIBY);
 }
 
 TEST(TbitTest, Create_with_equal){

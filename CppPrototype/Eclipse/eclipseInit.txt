@@ -1,0 +1,4 @@
+"If you want Debug from eclipse go to the debug folder and"
+"run from build folder, the source folder path may have to chang"
+
+cmake C:\_work\ArtificialBrain\CppPrototype\ -DCMAKE_BUILD_TYPE=Debug
