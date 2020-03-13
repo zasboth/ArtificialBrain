@@ -21,7 +21,7 @@ struct Tbit
         Tbit(TernaryBit bit_): bit(bit_){};
         ~Tbit();
 
-        Tbit compare(const Tbit val);
+        TernaryBit compare(const Tbit val);
         TernaryBit getBit() {return bit;}
         double getTreshold() {return treshold;}
         void setTreshold(double value);
