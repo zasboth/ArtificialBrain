@@ -1,6 +1,9 @@
 #include "Tbit.h"
 #include <iostream>
+#include <cmath>
 
+
+using namespace std;
 
 Tbit::~Tbit()
 {
@@ -30,8 +33,7 @@ void Tbit::calcBit(double a)
 
 void Tbit::setTreshold(double value)
 {
-    if (value < 0) throw ("Treshold is a positive number or zero!");
-    treshold = value;
+    treshold = abs(value);
 }
 
 Tbit Tbit::compare(const Tbit val)
@@ -79,4 +81,14 @@ bool Tbit::operator==(const Tbit &operand)
 bool Tbit::operator!=(const Tbit &operand)
 {
     return !(*this == operand);
+}
+
+bool Tbit::operator==(const TernaryBit &operand)
+{
+    return bit == operand;
+}
+
+bool Tbit::operator!=(const TernaryBit &operand)
+{
+    return this->bit != operand;
 }

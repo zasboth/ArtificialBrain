@@ -30,7 +30,9 @@ struct Tbit
         Tbit operator= (const Tbit& a);
         Tbit operator= (const TernaryBit& a);
         bool operator== (const Tbit& operand);
-        bool operator!= (const Tbit& operand); 
+        bool operator!= (const Tbit& operand);
+        bool operator== (const TernaryBit& operand);
+        bool operator!= (const TernaryBit& operand);
         Tbit operator! ();
 };
 
