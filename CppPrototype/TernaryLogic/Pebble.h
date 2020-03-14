@@ -13,12 +13,17 @@
 class Pebble {
 
 private:
-	const Tbit *bits;
+	Tbit *bits;
 	const int inputLength;
 
 public:
 	Pebble(int inputLength_);
 	virtual ~Pebble();
+
+	int compare(Pebble peble);
+	Tbit compareResultToTbit(int res);
+	Tbit get(int index);
+	void set(int index, TernaryBit value);
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */
