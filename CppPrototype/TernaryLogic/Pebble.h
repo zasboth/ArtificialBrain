@@ -21,7 +21,6 @@ public:
 	virtual ~Pebble();
 
 	int compare(Pebble peble);
-	Tbit compareResultToTbit(int res);
 	Tbit get(int index);
 	void set(int index, TernaryBit value);
 };
