@@ -20,9 +20,12 @@ public:
 	Pebble(int inputLength_);
 	virtual ~Pebble();
 
-	int compare(Pebble peble);
+	double compare(Pebble peble);
 	Tbit get(int index);
 	void set(int index, TernaryBit value);
+	int getLength() {
+		return inputLength;
+	}
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */

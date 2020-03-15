@@ -26,14 +26,15 @@ Tbit Pebble::get(int index) {
 	}
 }
 
-int Pebble::compare(Pebble peble) {
+double Pebble::compare(Pebble peble) {
 	int result = 0;
 	for (int var = 0; var < inputLength; ++var) {
 		Tbit tbit = peble.get(var);
-		TernaryBit bit = bits[var].compare(tbit);
-		result += int(bit);
+		uTernaryBit bit;
+		bit.tb = bits[var].compare(tbit);
+		result += bit.numeric + 1;
 	}
-	return result;
+	return (result - inputLength);
 }
 
 void Pebble::set(int index, TernaryBit value) {
