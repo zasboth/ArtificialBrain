@@ -4,7 +4,9 @@ enable_testing()
 
 set(Sources
 	main.cpp
-    TbitTest.cpp
+    tbit_test.cpp
+    pebble_test.cpp
+    arbitrator_test.cpp
 )
 
 add_executable(tester ${Sources})

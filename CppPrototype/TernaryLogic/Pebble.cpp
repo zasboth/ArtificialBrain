@@ -5,7 +5,7 @@
  *      Author: zsolt
  */
 
-#include <Pebble.h>
+#include <pebble.h>
 #include "tbit.h"
 
 Pebble::Pebble(int inputLength_) :
@@ -26,10 +26,10 @@ Tbit Pebble::get(int index) {
 	}
 }
 
-double Pebble::compare(Pebble peble) {
+double Pebble::compare(Pebble pebble) {
 	int result = 0;
 	for (int var = 0; var < inputLength; ++var) {
-		Tbit tbit = peble.get(var);
+		Tbit tbit = pebble.get(var);
 		uTernaryBit bit;
 		bit.tb = bits[var].compare(tbit);
 		result += bit.numeric + 1;
@@ -43,4 +43,12 @@ void Pebble::set(int index, TernaryBit value) {
 	} else {
 		throw "Index out of bound!";
 	}
+}
+
+bool Pebble::operator ==(Pebble o) {
+	return this->compare(o);
+}
+
+bool Pebble::operator !=(Pebble o) {
+	return !this->compare(o);
 }

@@ -26,6 +26,9 @@ public:
 	int getLength() {
 		return inputLength;
 	}
+
+	bool operator ==(Pebble o);
+	bool operator !=(Pebble o);
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */
