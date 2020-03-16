@@ -7,7 +7,7 @@ enum TernaryBit : signed char {
 
 union uTernaryBit {
 	TernaryBit tb;
-	int numeric;
+	signed char numeric;
 };
 
 struct Tbit {
@@ -37,6 +37,7 @@ public:
 	Tbit operator=(const double &a);
 	Tbit operator=(const Tbit &a);
 	Tbit operator=(const TernaryBit &a);
+	operator TernaryBit() {return bit;}
 	bool operator==(const Tbit &operand);
 	bool operator!=(const Tbit &operand);
 	bool operator==(const TernaryBit &operand);

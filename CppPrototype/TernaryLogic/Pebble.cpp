@@ -46,9 +46,9 @@ void Pebble::set(int index, TernaryBit value) {
 }
 
 bool Pebble::operator ==(Pebble o) {
-	return this->compare(o);
+	return this->compare(o) == inputLength;
 }
 
 bool Pebble::operator !=(Pebble o) {
-	return !this->compare(o);
+	return this->compare(o) != inputLength;
 }

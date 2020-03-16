@@ -68,3 +68,5 @@ bool Tbit::operator==(const TernaryBit &operand) {
 bool Tbit::operator!=(const TernaryBit &operand) {
 	return this->bit != operand;
 }
+
+
