@@ -30,21 +30,21 @@ void Tbit::setTreshold(double value) {
 	treshold = abs(value);
 }
 
-TernaryBit Tbit::compare(const Tbit val) {
+TernaryBit Tbit::compare(const Tbit &val) {
 	return Tbit(!(bit == MAIBY) * (bit * val.bit) + (bit == MAIBY)).bit;
 }
 
-Tbit Tbit::operator=(const double &a) {
+Tbit &Tbit::operator=(const double &a) {
 	calcBit(a);
 	return *this;
 }
 
-Tbit Tbit::operator=(const Tbit &a) {
+Tbit &Tbit::operator=(const Tbit &a) {
 	bit = a.bit;
 	return *this;
 }
 
-Tbit Tbit::operator=(const TernaryBit &a) {
+Tbit &Tbit::operator=(const TernaryBit &a) {
 	bit = a;
 	return *this;
 }

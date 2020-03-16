@@ -23,14 +23,14 @@ public:
 	Tbit(TernaryBit bit_);
 	~Tbit();
 
-	TernaryBit compare(const Tbit val);
+	TernaryBit compare(const Tbit &val);
 	TernaryBit getBit();
 	double getTreshold();
 	void setTreshold(double value);
 
-	Tbit operator=(const double &a);
-	Tbit operator=(const Tbit &a);
-	Tbit operator=(const TernaryBit &a);
+	Tbit &operator=(const double &a);
+	Tbit &operator=(const Tbit &a);
+	Tbit &operator=(const TernaryBit &a);
 	operator TernaryBit();
 	bool operator==(const Tbit &operand);
 	bool operator!=(const Tbit &operand);

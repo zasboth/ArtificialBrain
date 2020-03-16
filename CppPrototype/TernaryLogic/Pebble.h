@@ -20,15 +20,16 @@ public:
 	Pebble(int inputLength_);
 	virtual ~Pebble();
 
-	double compare(Pebble peble);
-	Tbit get(int index);
-	void set(int index, TernaryBit value);
+	double compare(const Pebble &peble);
+//	Tbit get(int index);
+//	void set(int index, TernaryBit value);
 	int getLength() {
 		return inputLength;
 	}
 
-	bool operator ==(Pebble o);
-	bool operator !=(Pebble o);
+	bool operator ==(const Pebble &o);
+	bool operator !=(const Pebble &o);
+	Tbit &operator [](int i);
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */
