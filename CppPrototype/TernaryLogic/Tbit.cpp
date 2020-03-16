@@ -69,4 +69,18 @@ bool Tbit::operator!=(const TernaryBit &operand) {
 	return this->bit != operand;
 }
 
+Tbit::Tbit(TernaryBit bit_) {
+	bit = bit_;
+}
 
+TernaryBit Tbit::getBit() {
+	return bit;
+}
+
+double Tbit::getTreshold() {
+	return treshold;
+}
+
+Tbit::operator TernaryBit() {
+	return bit;
+}

@@ -20,24 +20,18 @@ public:
 	Tbit();
 	Tbit(double a);
 	Tbit(double a, double treshold);
-	Tbit(TernaryBit bit_) :
-			bit(bit_) {
-	}
+	Tbit(TernaryBit bit_);
 	~Tbit();
 
 	TernaryBit compare(const Tbit val);
-	TernaryBit getBit() {
-		return bit;
-	}
-	double getTreshold() {
-		return treshold;
-	}
+	TernaryBit getBit();
+	double getTreshold();
 	void setTreshold(double value);
 
 	Tbit operator=(const double &a);
 	Tbit operator=(const Tbit &a);
 	Tbit operator=(const TernaryBit &a);
-	operator TernaryBit() {return bit;}
+	operator TernaryBit();
 	bool operator==(const Tbit &operand);
 	bool operator!=(const Tbit &operand);
 	bool operator==(const TernaryBit &operand);
