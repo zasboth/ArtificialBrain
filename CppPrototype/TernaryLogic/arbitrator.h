@@ -13,18 +13,19 @@
 
 using namespace std;
 
-
 class arbitrator {
 
 private:
-//	 map<Pebble, bool> memory;
-//	 Pebble master;
-//	 int length;
+	const map<Pebble, bool> &memory();
+	const Pebble &master;
+	const int length;
 
 public:
-	arbitrator();
+	arbitrator(int length_);
 	virtual ~arbitrator();
 
+	double ask(const Pebble &p);
+	TernaryBit ask(const Pebble &p, const double &treshold);
 
 };
 

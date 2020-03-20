@@ -14,19 +14,21 @@ class Pebble {
 
 private:
 	Tbit *bits;
-	const int inputLength;
+	int inputLength;
 
 public:
 	Pebble(int inputLength_);
+	Pebble(const Pebble &p);
+	Pebble(Pebble &&p);
 	virtual ~Pebble();
 
 	double compare(const Pebble &peble);
-//	Tbit get(int index);
-//	void set(int index, TernaryBit value);
 	int getLength() {
 		return inputLength;
 	}
 
+	Pebble &operator =(const Pebble &p);
+	Pebble &operator =(Pebble &&p);
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
 	Tbit &operator [](int i);

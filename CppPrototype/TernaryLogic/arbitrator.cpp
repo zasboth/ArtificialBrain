@@ -7,12 +7,12 @@
 
 #include <arbitrator.h>
 
-arbitrator::arbitrator() {
-	// TODO Auto-generated constructor stub
+arbitrator::arbitrator(int length_) :
+		master(length_), length(length_) {
 
 }
 
 arbitrator::~arbitrator() {
-	// TODO Auto-generated destructor stub
+
 }
 

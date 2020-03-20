@@ -20,14 +20,6 @@ Pebble::~Pebble() {
 	delete bits;
 }
 
-//Tbit Pebble::get(int index) {
-//	if (index < inputLength && index >= 0) {
-//		return bits[index];
-//	} else {
-//		throw "Index out of bound!";
-//	}
-//}
-
 double Pebble::compare(const Pebble &pebble) {
 	int result = 0;
 	for (int i = 0; i < inputLength; ++i) {
@@ -38,14 +30,6 @@ double Pebble::compare(const Pebble &pebble) {
 	return (result - inputLength);
 }
 
-//void Pebble::set(int index, TernaryBit value) {
-//	if (index < inputLength && index >= 0) {
-//		bits[index] = value;
-//	} else {
-//		throw "Index out of bound!";
-//	}
-//}
-
 bool Pebble::operator ==(const Pebble &o) {
 	return this->compare(o) == inputLength;
 }
@@ -54,6 +38,36 @@ bool Pebble::operator !=(const Pebble &o) {
 	return this->compare(o) != inputLength;
 }
 
-Tbit &Pebble::operator [](int i) {
+Tbit& Pebble::operator [](int i) {
 	return this->bits[i];
+}
+
+Pebble::Pebble(const Pebble &p) :
+		inputLength(p.inputLength) {
+	bits = new Tbit[inputLength];
+	for (int i = 0; i < inputLength; ++i) {
+		bits[i] = p.bits[i];
+	}
+}
+
+Pebble::Pebble(Pebble &&p) :
+		inputLength(p.inputLength) {
+	bits = p.bits;
+	p.bits = new Tbit[inputLength];
+}
+
+Pebble &Pebble::operator =(const Pebble &p) {
+	inputLength = p.inputLength;
+	bits = new Tbit[inputLength];
+	for (int i = 0; i < inputLength; ++i) {
+		bits[i] = p.bits[i];
+	}
+	return *this;
+}
+
+Pebble &Pebble::operator =(Pebble &&p) {
+	inputLength = p.inputLength;
+	bits = p.bits;
+	p.bits = new Tbit[inputLength];
+	return *this;
 }

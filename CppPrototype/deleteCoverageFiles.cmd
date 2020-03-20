@@ -1,4 +1,4 @@
-cd C:\_work\CppEclipse\build\
+cd ..\build
 del /S *.gcno
 del /S *.gcda
 pause
