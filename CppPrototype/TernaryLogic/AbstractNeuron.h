@@ -8,17 +8,29 @@
 #ifndef TERNARYLOGIC_ABSTRACTNEURON_H_
 #define TERNARYLOGIC_ABSTRACTNEURON_H_
 
+#include "pebble.h"
+#include "tbit.h"
+
+template<typename T>
 class AbstractNeuron {
+
 protected:
 	const int length;
 
 public:
-	AbstractNeuron(const int length_);
+	virtual AbstractNeuron(const int length_);
 	virtual ~AbstractNeuron();
-	AbstractNeuron(const AbstractNeuron &other);
-	AbstractNeuron(AbstractNeuron &&other);
-	AbstractNeuron& operator=(const AbstractNeuron &other);
-	AbstractNeuron& operator=(AbstractNeuron &&other);
+
+	virtual double ask(T &t);
+	virtual TernaryBit ask(T &t, const double &treshold);
+	virtual double defaultTreshold();
+	virtual void teach(bool correct);
+
 };
+
+template<typename T>
+inline AbstractNeuron<T>::AbstractNeuron(const int length_) :
+		length(length_) {
+}
 
 #endif /* TERNARYLOGIC_ABSTRACTNEURON_H_ */

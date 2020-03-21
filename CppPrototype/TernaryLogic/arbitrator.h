@@ -10,22 +10,24 @@
 
 #include <map>
 #include "pebble.h"
+#include "AbstractNeuron.h"
 
 using namespace std;
 
-class arbitrator {
+class arbitrator: public AbstractNeuron<Pebble> {
 
 private:
-	const map<Pebble, bool> &memory();
+	map<Pebble, bool> &memory;
 	const Pebble &master;
-	const int length;
 
 public:
 	arbitrator(int length_);
 	virtual ~arbitrator();
 
-	double ask(const Pebble &p);
-	TernaryBit ask(const Pebble &p, const double &treshold);
+	double ask(Pebble &p) override;
+	TernaryBit ask(Pebble &t, const double &treshold) override;
+	double defaultTreshold() override;
+	void teach(bool correct) override;
 
 };
 

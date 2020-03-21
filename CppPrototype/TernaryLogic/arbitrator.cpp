@@ -6,13 +6,27 @@
  */
 
 #include <arbitrator.h>
+#include "AbstractNeuron.h"
+#include "pebble.h"
 
 arbitrator::arbitrator(int length_) :
-		master(length_), length(length_) {
-
+		AbstractNeuron(length_), master(length_), memory() {
 }
 
 arbitrator::~arbitrator() {
+	memory.~map();
+	master.~Pebble();
+}
+
+double arbitrator::ask(Pebble &p) {
 
 }
 
+TernaryBit arbitrator::ask(Pebble &t, const double &treshold) {
+}
+
+double arbitrator::defaultTreshold() {
+}
+
+void arbitrator::teach(bool correct) {
+}
