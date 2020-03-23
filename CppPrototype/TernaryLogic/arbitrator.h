@@ -14,21 +14,21 @@
 
 using namespace std;
 
-class arbitrator: public AbstractNeuron<Pebble> {
+class arbitrator: public AbstractNeuron {
 
 private:
-	map<Pebble, bool> &memory;
-	const Pebble &master;
+	map<Pebble, bool> memory;
+	Pebble master;
 
 public:
 	arbitrator(int length_);
 	virtual ~arbitrator();
 
-	double ask(Pebble &p) override;
-	TernaryBit ask(Pebble &t, const double &treshold) override;
-	double defaultTreshold() override;
-	void teach(bool correct) override;
-
+	virtual double askAnalog(const double d[]) override;
+	virtual TernaryBit askTernary(const double d[]) override;
+	virtual double askAnalog(const Pebble &p) override;
+	virtual TernaryBit askTernary(const Pebble &p) override;
+	virtual void teach(bool correct);
 };
 
 #endif /* TERNARYLOGIC_ARBITRATOR_H_ */

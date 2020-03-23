@@ -11,25 +11,45 @@
 #include "pebble.h"
 #include "tbit.h"
 
-template<typename T>
 class AbstractNeuron {
 
 protected:
 	const int length;
+	double inputTreshold = 0;
+	double outputTreshold = 0;
 
 public:
-	virtual AbstractNeuron(const int length_);
+	AbstractNeuron(const int length_);
 	virtual ~AbstractNeuron();
 
-	virtual double ask(T &t);
-	virtual TernaryBit ask(T &t, const double &treshold);
-	virtual double defaultTreshold();
+	virtual double askAnalog(const double d[]);
+	virtual TernaryBit askTernary(const double d[]);
+	virtual double askAnalog(const Pebble &p);
+	virtual TernaryBit askTernary(const Pebble &p);
 	virtual void teach(bool correct);
 
+	double getInputTreshold() const {
+		return inputTreshold;
+	}
+
+	void setInputTreshold(double inputTreshold = 0) {
+		this->inputTreshold = inputTreshold;
+	}
+
+	const int getLength() const {
+		return length;
+	}
+
+	double getOutputTreshold() const {
+		return outputTreshold;
+	}
+
+	void setOutputTreshold(double outputTreshold = 0) {
+		this->outputTreshold = outputTreshold;
+	}
 };
 
-template<typename T>
-inline AbstractNeuron<T>::AbstractNeuron(const int length_) :
+inline AbstractNeuron::AbstractNeuron(const int length_) :
 		length(length_) {
 }
 
