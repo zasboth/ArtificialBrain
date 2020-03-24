@@ -13,7 +13,8 @@
 using namespace std;
 
 arbitrator::arbitrator(int length_) :
-		AbstractNeuron(length_), memory(), master(length_) {
+		AbstractNeuron(length_), memory(), master(length_), answer(2 * length_), lastQuestion(
+				length_) {
 }
 
 arbitrator::~arbitrator() {
@@ -34,14 +35,17 @@ TernaryBit arbitrator::askTernary(const double d[]) {
 }
 
 double arbitrator::askAnalog(const Pebble &p) {
-	for (map<Pebble, bool>::iterator it = memory.begin(); it != memory.end();
-			++it) {
+	lastQuestion = p;
+	for (map<Pebble, TernaryBit>::iterator it = memory.begin();
+			it != memory.end(); ++it) {
 		if (Pebble(it->first) == p) {
-			bool v = it->second;
-			return (v * length) + (!v * length * -1);
+			TernaryBit v = it->second;
+			answer = (v * length);
+			return answer;
 		}
 	}
-	return this->master.compare(p);
+	answer = this->master.compare(p);
+	return answer;
 }
 
 TernaryBit arbitrator::askTernary(const Pebble &p) {
@@ -52,4 +56,18 @@ TernaryBit arbitrator::askTernary(const Pebble &p) {
 }
 
 void arbitrator::teach(bool correct) {
+	if (correct) {
+		Tbit bit(answer, outputTreshold);
+		for (map<Pebble, TernaryBit>::iterator it = memory.begin();
+				it != memory.end(); ++it) {
+			if (Pebble(it->first) == lastQuestion) {
+				TernaryBit v = it->second;
+				if (v != bit) {
+					memory.erase(it);
+				} else {
+					break;
+				}
+			}
+		}
+	}
 }
