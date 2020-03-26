@@ -15,8 +15,8 @@ class AbstractNeuron {
 
 protected:
 	const int length;
-	double inputTreshold = 0;
-	double outputTreshold = 0;
+	double inputTreshold = 0.8;
+	double outputTreshold = 0.8;
 
 public:
 	AbstractNeuron(const int length_);
@@ -27,6 +27,9 @@ public:
 	virtual double askAnalog(const Pebble &p);
 	virtual TernaryBit askTernary(const Pebble &p);
 	virtual void teach(bool correct);
+	double activation(double x) {
+		return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
+	}
 
 	double getInputTreshold() const {
 		return inputTreshold;

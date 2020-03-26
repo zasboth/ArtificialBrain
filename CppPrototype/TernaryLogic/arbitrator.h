@@ -17,10 +17,11 @@ using namespace std;
 class arbitrator: public AbstractNeuron {
 
 private:
-	map<Pebble, TernaryBit> memory;
 	Pebble master;
 	double answer;
 	Pebble lastQuestion;
+	int round;
+	double* summs;
 
 public:
 	arbitrator(int length_);
