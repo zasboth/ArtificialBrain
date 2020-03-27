@@ -11,7 +11,11 @@
 #include "pebble.h"
 #include "tbit.h"
 
-class AbstractNeuron {
+double activation(double x) {
+		return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
+	}
+
+class abstractNeuron {
 
 protected:
 	const int length;
@@ -19,17 +23,14 @@ protected:
 	double outputTreshold = 0.8;
 
 public:
-	AbstractNeuron(const int length_);
-	virtual ~AbstractNeuron();
+	abstractNeuron(const int length_);
+	virtual ~abstractNeuron();
 
 	virtual double askAnalog(const double d[]);
 	virtual TernaryBit askTernary(const double d[]);
 	virtual double askAnalog(const Pebble &p);
 	virtual TernaryBit askTernary(const Pebble &p);
 	virtual void teach(bool correct);
-	double activation(double x) {
-		return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
-	}
 
 	double getInputTreshold() const {
 		return inputTreshold;
@@ -52,7 +53,7 @@ public:
 	}
 };
 
-inline AbstractNeuron::AbstractNeuron(const int length_) :
+inline abstractNeuron::abstractNeuron(const int length_) :
 		length(length_) {
 }
 

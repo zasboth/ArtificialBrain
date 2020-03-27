@@ -8,13 +8,13 @@
 #ifndef TERNARYLOGIC_ARBITRATOR_H_
 #define TERNARYLOGIC_ARBITRATOR_H_
 
+#include <abstractNeuron.h>
 #include <map>
 #include "pebble.h"
-#include "AbstractNeuron.h"
 
 using namespace std;
 
-class arbitrator: public AbstractNeuron {
+class arbitrator: public abstractNeuron {
 
 private:
 	Pebble master;
