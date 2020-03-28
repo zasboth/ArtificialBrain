@@ -6,4 +6,11 @@
  */
 
 #include <arbitrator.h>
+#include <gtest/gtest.h>
+
+TEST(arbitratorTest, constructor_test){
+	arbitrator res = arbitrator(10);
+	ASSERT_TRUE(res.getLength() == 10);
+	res.~arbitrator();
+}
 

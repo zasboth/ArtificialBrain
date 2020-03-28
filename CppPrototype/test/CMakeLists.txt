@@ -7,6 +7,7 @@ set(Sources
     tbit_test.cpp
     pebble_test.cpp
     arbitrator_test.cpp
+    AbstractNeuron_test.cpp
 )
 
 add_executable(tester ${Sources})
