@@ -19,14 +19,16 @@ class abstractNeuron {
 
 protected:
 	const int length;
-	double inputTreshold = 0.8;
-	double outputTreshold = 0.8;
+	double inputTreshold;
+	double outputTreshold;
 
 public:
 	abstractNeuron(const int length_) :
-			length(length_) {
+			length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(
+					activation(length_) * 0.5) {
 	}
-	virtual ~abstractNeuron(){};
+	virtual ~abstractNeuron() {
+	}
 
 	virtual double askAnalog(const double d[]) = 0;
 	virtual TernaryBit askTernary(const double d[]) = 0;
