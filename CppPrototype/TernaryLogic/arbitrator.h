@@ -20,7 +20,6 @@ private:
 	Pebble master;
 	double answer;
 	Pebble lastQuestion;
-	int round;
 	double* summs;
 
 public:

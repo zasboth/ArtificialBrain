@@ -13,7 +13,7 @@ using namespace std;
 
 arbitrator::arbitrator(int length_) :
 		abstractNeuron(length_), master(length_), answer(2 * length_), lastQuestion(
-				length_), round(0) {
+				length_) {
 	summs = new double[length_];
 }
 
@@ -37,7 +37,6 @@ TernaryBit arbitrator::askTernary(const double d[]) {
 
 double arbitrator::askAnalog(const Pebble &p) {
 	lastQuestion = p;
-	round++;
 	answer = activation(this->master.compare(p));
 	return answer;
 }
@@ -47,8 +46,9 @@ TernaryBit arbitrator::askTernary(const Pebble &p) {
 }
 
 void arbitrator::teach(bool correct) {
+	int mul = correct * answer + !correct * !answer;
 	for (int i = 0; i < master.getLength(); ++i) {
-		summs[i] += (correct * lastQuestion[i] + !correct * !lastQuestion[i]);
+		summs[i] += (mul * lastQuestion[i]);
 		double val = activation(summs[i]);
 		master[i] = Tbit(val, inputTreshold);
 	}
