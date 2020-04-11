@@ -46,7 +46,8 @@ TernaryBit arbitrator::askTernary(const Pebble &p) {
 }
 
 void arbitrator::teach(bool correct) {
-	int mul = correct * answer + !correct * !answer;
+	Tbit a(answer, inputTreshold);
+	double mul = correct * a + !correct * !a;
 	for (int i = 0; i < master.getLength(); ++i) {
 		summs[i] += (mul * lastQuestion[i]);
 		double val = activation(summs[i]);
