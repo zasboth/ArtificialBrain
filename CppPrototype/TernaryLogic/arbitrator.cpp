@@ -15,6 +15,9 @@ arbitrator::arbitrator(int length_) :
 		abstractNeuron(length_), master(length_), answer(2 * length_), lastQuestion(
 				length_) {
 	summs = new double[length_];
+	for (int i = 0; i < length_; ++i) {
+		summs[i] = 0;
+	}
 }
 
 arbitrator::~arbitrator() {
