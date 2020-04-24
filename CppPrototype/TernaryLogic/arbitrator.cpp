@@ -23,7 +23,7 @@ arbitrator::arbitrator(int length_) :
 arbitrator::~arbitrator() {
 	master.~Pebble();
 	lastQuestion.~Pebble();
-	delete summs;
+	delete[] summs;
 }
 
 double arbitrator::askAnalog(const double d[]) {
@@ -49,8 +49,7 @@ TernaryBit arbitrator::askTernary(const Pebble &p) {
 }
 
 void arbitrator::teach(bool correct) {
-	Tbit a(answer, inputTreshold);
-	double mul = correct * a + !correct * !a;
+	double mul = correct * answer + !correct * answer * -1;
 	for (int i = 0; i < master.getLength(); ++i) {
 		summs[i] += (mul * lastQuestion[i]);
 		double val = activation(summs[i]);

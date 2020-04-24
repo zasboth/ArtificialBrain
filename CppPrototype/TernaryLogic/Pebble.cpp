@@ -17,7 +17,7 @@ Pebble::Pebble(int inputLength_) :
 }
 
 Pebble::~Pebble() {
-	delete bits;
+	delete[] bits;
 }
 
 double Pebble::compare(const Pebble &pebble) {
