@@ -13,8 +13,8 @@
 class Pebble {
 
 private:
-	Tbit *bits;
 	int inputLength;
+	Tbit *bits;
 
 public:
 	Pebble(int inputLength_);
