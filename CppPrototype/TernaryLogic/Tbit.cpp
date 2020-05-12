@@ -49,6 +49,14 @@ Tbit &Tbit::operator=(const TernaryBit &a) {
 	return *this;
 }
 
+Tbit::Tbit(const Tbit &b) {
+	bit = b.bit;
+}
+
+Tbit::Tbit(Tbit &&b) {
+	bit = b.bit;
+}
+
 Tbit Tbit::operator!() {
 	return Tbit(bit * -1);
 }
@@ -84,3 +92,5 @@ double Tbit::getTreshold() {
 Tbit::operator TernaryBit() {
 	return bit;
 }
+
+

@@ -31,7 +31,7 @@ public:
 	Pebble &operator =(Pebble &&p);
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
-	Tbit &operator [](int i);
+	Tbit &operator [](int i) const;
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */

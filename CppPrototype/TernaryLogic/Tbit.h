@@ -18,6 +18,8 @@ private:
 
 public:
 	Tbit();
+	Tbit(const Tbit &b);
+	Tbit(Tbit &&b);
 	Tbit(double a);
 	Tbit(double a, double treshold);
 	Tbit(TernaryBit bit_);

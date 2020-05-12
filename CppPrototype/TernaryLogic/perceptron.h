@@ -13,10 +13,10 @@
 class perceptron: public abstractNeuron {
 private:
 	double bias = 0;
-	double weights[];
+	double *weights;
 	double lastAnswer = 0.0;
 	double learnRate = 1.0;
-	double inputs[];
+	double *inputs;
 
 public:
 	perceptron(const int _length);

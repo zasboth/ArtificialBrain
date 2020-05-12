@@ -7,6 +7,8 @@ add_library(TernaryLogic STATIC
     pebble.cpp
     arbitrator.h
     arbitrator.cpp
+    perceptron.h
+    perceptron.cpp
 )
 
 target_include_directories(TernaryLogic PUBLIC
