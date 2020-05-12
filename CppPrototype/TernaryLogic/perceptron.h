@@ -14,6 +14,9 @@ class perceptron: public abstractNeuron {
 private:
 	double bias = 0;
 	double weights[];
+	double lastAnswer = 0.0;
+	double learnRate = 1.0;
+	double inputs[];
 
 public:
 	perceptron(const int _length);
@@ -31,6 +34,14 @@ public:
 
 	void setBias(double bias = 0) {
 		this->bias = bias;
+	}
+
+	double getLearnRate() const {
+		return learnRate;
+	}
+
+	void setLearnRate(double learnRate = 1.0) {
+		this->learnRate = learnRate;
 	}
 };
 
