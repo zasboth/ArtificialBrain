@@ -6,11 +6,18 @@
  */
 
 #include <perceptron.h>
+#include <cstdlib>
+#include <time.h>
 
 perceptron::perceptron(const int _length) :
 		abstractNeuron(_length) {
 	weights = new double[length];
 	inputs = new double[length];
+	srand(time(NULL));
+	for (int i = 0; i < length; ++i) {
+		inputs[i] = 0.0;
+		weights[i] = double(rand() % 10000 - 5000) / 5000;
+	}
 }
 
 perceptron::~perceptron() {
@@ -19,7 +26,8 @@ perceptron::~perceptron() {
 }
 
 void perceptron::teach(bool correct) {
-	double expected = correct * lastAnswer + !correct * !lastAnswer;
+	Tbit ans(lastAnswer);
+	double expected = double(correct) * ans + double(!correct) * !ans;
 	double perceptronError = expected - lastAnswer;
 	perceptronError *= perceptronError;
 	for (int i = 0; i < length; ++i) {

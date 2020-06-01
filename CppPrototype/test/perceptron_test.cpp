@@ -7,6 +7,10 @@
 
 #include <perceptron.h>
 #include <gtest/gtest.h>
+#include <iostream>
+
+using namespace std;
+
 
 TEST(perceptronTest, constructor_test) {
 	perceptron res(10);
@@ -20,21 +24,22 @@ TEST(perceptronTest, askAnalog_test) {
 	pebble[0] = TRUE;
 	pebble[1] = TRUE;
 	pebble[2] = TRUE;
-	double res = arb.askAnalog(pebble);
-	ASSERT_TRUE(res > 0.5);
+	Tbit bit = arb.askTernary(pebble);
+	double res;
 	arb.teach(false);
-	TernaryBit bit = arb.askTernary(pebble);
-	ASSERT_TRUE(bit == FALSE);
+	res = arb.askAnalog(pebble);
+	ASSERT_TRUE(bit == !Tbit(res));
 }
+
 
 TEST(perceptronTest, askTernary_test) {
 	perceptron arb(3);
 	double pebble[3]{1,1,1};
-	double res = arb.askAnalog(pebble);
-	ASSERT_TRUE(res > 0.5);
+	Tbit bit = arb.askTernary(pebble);
+	double res;
 	arb.teach(false);
-	TernaryBit bit = arb.askTernary(pebble);
-	ASSERT_TRUE(bit == FALSE);
+	res = arb.askAnalog(pebble);
+	ASSERT_TRUE(bit == !Tbit(res));
 }
 
 
