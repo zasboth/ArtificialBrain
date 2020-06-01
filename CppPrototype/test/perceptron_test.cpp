@@ -11,7 +11,6 @@
 
 using namespace std;
 
-
 TEST(perceptronTest, constructor_test) {
 	perceptron res(10);
 	ASSERT_TRUE(res.getLength() == 10);
@@ -26,20 +25,28 @@ TEST(perceptronTest, askAnalog_test) {
 	pebble[2] = TRUE;
 	Tbit bit = arb.askTernary(pebble);
 	double res;
-	arb.teach(false);
-	res = arb.askAnalog(pebble);
+	int counter = 0;
+	do {
+		arb.teach(false);
+		res = arb.askAnalog(pebble);
+		counter++;
+		cout << res << " " << bit << endl;
+	} while (bit != (!Tbit(res)) && counter < 100);
 	ASSERT_TRUE(bit == !Tbit(res));
 }
-
 
 TEST(perceptronTest, askTernary_test) {
 	perceptron arb(3);
-	double pebble[3]{1,1,1};
+	double pebble[3] { 1, 1, 1 };
 	Tbit bit = arb.askTernary(pebble);
 	double res;
-	arb.teach(false);
-	res = arb.askAnalog(pebble);
+	int counter = 0;
+	do {
+		arb.teach(false);
+		res = arb.askAnalog(pebble);
+		counter++;
+		cout << res << " " << bit << endl;
+	} while (bit != (!Tbit(res)) && counter < 100);
 	ASSERT_TRUE(bit == !Tbit(res));
 }
-
 
