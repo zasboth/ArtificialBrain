@@ -9,6 +9,8 @@ add_library(TernaryLogic STATIC
     arbitrator.cpp
     perceptron.h
     perceptron.cpp
+    node.h
+    node.cpp
 )
 
 target_include_directories(TernaryLogic PUBLIC

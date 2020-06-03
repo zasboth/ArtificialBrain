@@ -23,10 +23,13 @@ protected:
 	double outputTreshold;
 
 public:
+	abstractNeuron(): length(0), inputTreshold(0), outputTreshold(0){};
+
 	abstractNeuron(const int length_) :
 			length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(
 					activation(length_) * 0.5) {
 	}
+
 	virtual ~abstractNeuron() {
 	}
 
