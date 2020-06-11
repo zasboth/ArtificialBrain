@@ -6,7 +6,7 @@
  */
 
 #include <pebble.h>
-#include "tbit.h"
+#include <Tbit.h>
 
 Pebble::Pebble(int inputLength_) :
 		inputLength(inputLength_) {

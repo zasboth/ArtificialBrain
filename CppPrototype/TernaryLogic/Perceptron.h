@@ -8,9 +8,9 @@
 #ifndef TERNARYLOGIC_PERCEPTRON_H_
 #define TERNARYLOGIC_PERCEPTRON_H_
 
-#include <abstractNeuron.h>
+#include <AbstractNeuron.h>
 
-class perceptron: public abstractNeuron {
+class Perceptron: public AbstractNeuron {
 private:
 	double bias = 0;
 	double *weights;
@@ -19,8 +19,8 @@ private:
 	double *inputs;
 
 public:
-	perceptron(const int _length);
-	virtual ~perceptron();
+	Perceptron(const int _length);
+	virtual ~Perceptron();
 
 	virtual void teach(bool correct);
 	virtual double askAnalog(const double *d);

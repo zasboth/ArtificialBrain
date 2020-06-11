@@ -5,17 +5,17 @@
  *      Author: zsolt
  */
 
-#include <arbitrator.h>
+#include <Arbitrator.h>
 #include <gtest/gtest.h>
 
 TEST(arbitratorTest, constructor_test) {
-	arbitrator res(10);
+	Arbitrator res(10);
 	ASSERT_TRUE(res.getLength() == 10);
-	res.~arbitrator();
+	res.~Arbitrator();
 }
 
 TEST(arbitratorTest, askAnalog_test) {
-	arbitrator arb(3);
+	Arbitrator arb(3);
 	Pebble pebble(3);
 	pebble[0] = TRUE;
 	pebble[1] = TRUE;
@@ -28,7 +28,7 @@ TEST(arbitratorTest, askAnalog_test) {
 }
 
 TEST(arbitratorTest, askTernary_test) {
-	arbitrator arb(3);
+	Arbitrator arb(3);
 	double pebble[3]{1,1,1};
 	double res = arb.askAnalog(pebble);
 	ASSERT_TRUE(res > 0.5);

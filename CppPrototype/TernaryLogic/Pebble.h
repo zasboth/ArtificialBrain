@@ -8,7 +8,7 @@
 #ifndef TERNARYLOGIC_PEBBLE_H_
 #define TERNARYLOGIC_PEBBLE_H_
 
-#include "tbit.h"
+#include <Tbit.h>
 
 class Pebble {
 

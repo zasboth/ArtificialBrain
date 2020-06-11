@@ -8,14 +8,14 @@
 #ifndef TERNARYLOGIC_ABSTRACTNEURON_H_
 #define TERNARYLOGIC_ABSTRACTNEURON_H_
 
+#include <Tbit.h>
 #include "pebble.h"
-#include "tbit.h"
 
 inline double activation(double x) {
 	return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
 }
 
-class abstractNeuron {
+class AbstractNeuron {
 
 protected:
 	const int length;
@@ -23,14 +23,14 @@ protected:
 	double outputTreshold;
 
 public:
-	abstractNeuron(): length(0), inputTreshold(0), outputTreshold(0){};
+	AbstractNeuron(): length(0), inputTreshold(0), outputTreshold(0){};
 
-	abstractNeuron(const int length_) :
+	AbstractNeuron(const int length_) :
 			length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(
 					activation(length_) * 0.5) {
 	}
 
-	virtual ~abstractNeuron() {
+	virtual ~AbstractNeuron() {
 	}
 
 	virtual double askAnalog(const double d[]) = 0;

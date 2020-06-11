@@ -5,20 +5,20 @@
  *      Author: zsolt
  */
 
-#include <perceptron.h>
 #include <gtest/gtest.h>
+#include <Perceptron.h>
 #include <iostream>
 
 using namespace std;
 
 TEST(perceptronTest, constructor_test) {
-	perceptron res(10);
+	Perceptron res(10);
 	ASSERT_TRUE(res.getLength() == 10);
-	res.~perceptron();
+	res.~Perceptron();
 }
 
 TEST(perceptronTest, askAnalog_test) {
-	perceptron arb(3);
+	Perceptron arb(3);
 	Pebble pebble(3);
 	pebble[0] = TRUE;
 	pebble[1] = TRUE;
@@ -36,7 +36,7 @@ TEST(perceptronTest, askAnalog_test) {
 }
 
 TEST(perceptronTest, askTernary_test) {
-	perceptron arb(3);
+	Perceptron arb(3);
 	double pebble[3] { 1, 1, 1 };
 	Tbit bit = arb.askTernary(pebble);
 	double res;

@@ -8,24 +8,19 @@
 #ifndef TERNARYLOGIC_NODE_H_
 #define TERNARYLOGIC_NODE_H_
 
-#include <abstractNeuron.h>
+#include <AbstractNeuron.h>
 #include <vector>
 
 using namespace std;
 
-
-class node: public abstractNeuron {
+class Node: public AbstractNeuron {
 private:
-	abstractNeuron& neuron;
-	vector<node*> children;
+	AbstractNeuron &neuron;
+	vector<Node*> children;
 
 public:
-	node(abstractNeuron& neuron_);
-	virtual ~node();
-//	node(const node &other);
-//	node(node &&other);
-//	node& operator=(const node &other);
-//	node& operator=(node &&other);
+	Node(AbstractNeuron &neuron_);
+	virtual ~Node();
 
 	virtual void teach(bool correct) override;
 	virtual double askAnalog(const double *d) override;
@@ -33,7 +28,9 @@ public:
 	virtual double askAnalog(const Pebble &p) override;
 	virtual TernaryBit askTernary(const double *d) override;
 
-
+	vector<Node*> getChildren() {
+		return children;
+	}
 };
 
 #endif /* TERNARYLOGIC_NODE_H_ */

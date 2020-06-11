@@ -1,16 +1,18 @@
 cmake_minimum_required(VERSION 3.15.0)
 
 add_library(TernaryLogic STATIC
-    tbit.h
-    tbit.cpp
-    pebble.h
-    pebble.cpp
-    arbitrator.h
-    arbitrator.cpp
-    perceptron.h
-    perceptron.cpp
-    node.h
-    node.cpp
+    Tbit.h
+    Tbit.cpp
+    Pebble.h
+    Pebble.cpp
+    Arbitrator.h
+    Arbitrator.cpp
+    Perceptron.h
+    Perceptron.cpp
+    Node.h
+    Node.cpp
+    Layer.h
+    Layer.cpp
 )
 
 target_include_directories(TernaryLogic PUBLIC

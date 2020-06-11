@@ -5,12 +5,12 @@
  *      Author: zsolt
  */
 
-#include <perceptron.h>
+#include <Perceptron.h>
 #include <cstdlib>
 #include <time.h>
 
-perceptron::perceptron(const int _length) :
-		abstractNeuron(_length) {
+Perceptron::Perceptron(const int _length) :
+		AbstractNeuron(_length) {
 	weights = new double[length];
 	inputs = new double[length];
 	srand(time(NULL));
@@ -20,12 +20,12 @@ perceptron::perceptron(const int _length) :
 	}
 }
 
-perceptron::~perceptron() {
+Perceptron::~Perceptron() {
 	delete[] weights;
 	delete[] inputs;
 }
 
-void perceptron::teach(bool correct) {
+void Perceptron::teach(bool correct) {
 	Tbit ans(lastAnswer);
 	double expected = double(correct) * ans + double(!correct) * !ans;
 	double perceptronError = expected - lastAnswer;
@@ -35,7 +35,7 @@ void perceptron::teach(bool correct) {
 	}
 }
 
-double perceptron::askAnalog(const double *d) {
+double Perceptron::askAnalog(const double *d) {
 	double result = 0.0;
 	lastAnswer = 0.0;
 	for (int i = 0; i < length; ++i) {
@@ -46,11 +46,11 @@ double perceptron::askAnalog(const double *d) {
 	return lastAnswer;
 }
 
-TernaryBit perceptron::askTernary(const Pebble &p) {
+TernaryBit Perceptron::askTernary(const Pebble &p) {
 	return Tbit(askAnalog(p), outputTreshold);
 }
 
-double perceptron::askAnalog(const Pebble &p) {
+double Perceptron::askAnalog(const Pebble &p) {
 	double result = 0.0;
 	lastAnswer = 0.0;
 	for (int i = 0; i < length; ++i) {
@@ -61,6 +61,6 @@ double perceptron::askAnalog(const Pebble &p) {
 	return result;
 }
 
-TernaryBit perceptron::askTernary(const double *d) {
+TernaryBit Perceptron::askTernary(const double *d) {
 	return Tbit(askAnalog(d), outputTreshold);
 }

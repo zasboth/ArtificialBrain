@@ -1,6 +1,6 @@
+#include <Tbit.h>
 #include <iostream>
 #include "gtest/gtest.h"
-#include "tbit.h"
 
 using namespace std;
 

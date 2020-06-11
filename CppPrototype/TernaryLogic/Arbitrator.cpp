@@ -4,15 +4,15 @@
  *  Created on: Mar 15, 2020
  *      Author: zsolt
  */
-#include <arbitrator.h>
-#include <abstractNeuron.h>
+#include <AbstractNeuron.h>
+#include <Arbitrator.h>
 #include "pebble.h"
 #include <map>
 
 using namespace std;
 
-arbitrator::arbitrator(int length_) :
-		abstractNeuron(length_), master(length_), answer(2 * length_), lastQuestion(
+Arbitrator::Arbitrator(int length_) :
+		AbstractNeuron(length_), master(length_), answer(2 * length_), lastQuestion(
 				length_) {
 	summs = new double[length_];
 	for (int i = 0; i < length_; ++i) {
@@ -20,13 +20,13 @@ arbitrator::arbitrator(int length_) :
 	}
 }
 
-arbitrator::~arbitrator() {
+Arbitrator::~Arbitrator() {
 	master.~Pebble();
 	lastQuestion.~Pebble();
 	delete[] summs;
 }
 
-double arbitrator::askAnalog(const double d[]) {
+double Arbitrator::askAnalog(const double d[]) {
 	Pebble p(this->getLength());
 	for (int i = 0; i < this->getLength(); ++i) {
 		p[i] = Tbit(d[i], inputTreshold);
@@ -34,21 +34,21 @@ double arbitrator::askAnalog(const double d[]) {
 	return this->askAnalog(p);
 }
 
-TernaryBit arbitrator::askTernary(const double d[]) {
+TernaryBit Arbitrator::askTernary(const double d[]) {
 	return Tbit(askAnalog(d), outputTreshold);
 }
 
-double arbitrator::askAnalog(const Pebble &p) {
+double Arbitrator::askAnalog(const Pebble &p) {
 	lastQuestion = p;
 	answer = activation(this->master.compare(p));
 	return answer;
 }
 
-TernaryBit arbitrator::askTernary(const Pebble &p) {
+TernaryBit Arbitrator::askTernary(const Pebble &p) {
 	return Tbit(askAnalog(p), outputTreshold);
 }
 
-void arbitrator::teach(bool correct) {
+void Arbitrator::teach(bool correct) {
 	double mul = correct * answer + !correct * answer * -1;
 	for (int i = 0; i < master.getLength(); ++i) {
 		summs[i] += (mul * lastQuestion[i]);
