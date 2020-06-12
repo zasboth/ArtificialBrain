@@ -9,14 +9,17 @@
 #define TERNARYLOGIC_PERCEPTRON_H_
 
 #include <AbstractNeuron.h>
+#include <Pebble.h>
+#include <Tbit.h>
+#include <vector>
 
 class Perceptron: public AbstractNeuron {
 private:
 	double bias = 0;
-	double *weights;
+	vector<double> weights;
 	double lastAnswer = 0.0;
 	double learnRate = 1.0;
-	double *inputs;
+	vector<double> inputs;
 
 public:
 	Perceptron(const int _length);

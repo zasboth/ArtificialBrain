@@ -9,12 +9,16 @@
 #define TERNARYLOGIC_PEBBLE_H_
 
 #include <Tbit.h>
+#include <vector>
+
+using namespace std;
+
 
 class Pebble {
 
 private:
 	int inputLength;
-	Tbit *bits;
+	vector<Tbit> bits;
 
 public:
 	Pebble(int inputLength_);
@@ -31,7 +35,7 @@ public:
 	Pebble &operator =(Pebble &&p);
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
-	Tbit &operator [](int i) const;
+	Tbit operator [](int i) const;
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */

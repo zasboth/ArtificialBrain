@@ -6,13 +6,14 @@
  */
 
 #include <Perceptron.h>
-#include <cstdlib>
+#include <stdlib.h>
 #include <time.h>
 
+using namespace std;
+
+
 Perceptron::Perceptron(const int _length) :
-		AbstractNeuron(_length) {
-	weights = new double[length];
-	inputs = new double[length];
+		AbstractNeuron(_length), weights(_length), inputs(_length)  {
 	srand(time(NULL));
 	for (int i = 0; i < length; ++i) {
 		inputs[i] = 0.0;
@@ -21,8 +22,6 @@ Perceptron::Perceptron(const int _length) :
 }
 
 Perceptron::~Perceptron() {
-	delete[] weights;
-	delete[] inputs;
 }
 
 void Perceptron::teach(bool correct) {

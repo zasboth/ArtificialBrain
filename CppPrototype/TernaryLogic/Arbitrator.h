@@ -9,8 +9,9 @@
 #define TERNARYLOGIC_ARBITRATOR_H_
 
 #include <AbstractNeuron.h>
-#include <map>
-#include "pebble.h"
+#include <Pebble.h>
+#include <Tbit.h>
+#include <vector>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ private:
 	Pebble master;
 	double answer;
 	Pebble lastQuestion;
-	double* summs;
+	vector<double> summs;
 
 public:
 	Arbitrator(int length_);

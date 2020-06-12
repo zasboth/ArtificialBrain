@@ -13,8 +13,7 @@ using namespace std;
 
 Arbitrator::Arbitrator(int length_) :
 		AbstractNeuron(length_), master(length_), answer(2 * length_), lastQuestion(
-				length_) {
-	summs = new double[length_];
+				length_), summs(length_) {
 	for (int i = 0; i < length_; ++i) {
 		summs[i] = 0;
 	}
@@ -23,7 +22,7 @@ Arbitrator::Arbitrator(int length_) :
 Arbitrator::~Arbitrator() {
 	master.~Pebble();
 	lastQuestion.~Pebble();
-	delete[] summs;
+	summs.~vector();
 }
 
 double Arbitrator::askAnalog(const double d[]) {
