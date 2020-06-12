@@ -9,10 +9,10 @@ add_library(TernaryLogic STATIC
     Arbitrator.cpp
     Perceptron.h
     Perceptron.cpp
-    Node.h
-    Node.cpp
     Layer.h
     Layer.cpp
+    Node.h
+    Node.cpp
 )
 
 target_include_directories(TernaryLogic PUBLIC

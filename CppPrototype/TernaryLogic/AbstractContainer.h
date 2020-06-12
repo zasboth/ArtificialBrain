@@ -20,6 +20,10 @@ private:
 	int outputLengt;
 
 public:
+
+	AbstarctContainer(): inputLength(0), outputLengt() {
+	}
+
 	AbstarctContainer(int inputLength_, int outputLength_): inputLength(inputLength_), outputLengt(outputLength_) {
 	}
 
