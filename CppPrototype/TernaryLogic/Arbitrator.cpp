@@ -25,7 +25,7 @@ Arbitrator::~Arbitrator() {
 	summs.~vector();
 }
 
-double Arbitrator::askAnalog(const double d[]) {
+double Arbitrator::askAnalog(const vector<double> &d) {
 	Pebble p(this->getLength());
 	for (int i = 0; i < this->getLength(); ++i) {
 		p[i] = Tbit(d[i], inputTreshold);
@@ -33,7 +33,7 @@ double Arbitrator::askAnalog(const double d[]) {
 	return this->askAnalog(p);
 }
 
-TernaryBit Arbitrator::askTernary(const double d[]) {
+TernaryBit Arbitrator::askTernary(const vector<double> &d) {
 	return Tbit(askAnalog(d), outputTreshold);
 }
 

@@ -20,7 +20,7 @@ void Node::teach(bool correct) {
 	this->neuron.teach(correct);
 }
 
-double Node::askAnalog(const double *d) {
+double Node::askAnalog(const vector<double> &d) {
 	return this->neuron.askAnalog(d);
 }
 
@@ -32,7 +32,7 @@ double Node::askAnalog(const Pebble &p) {
 	return this->neuron.askAnalog(p);
 }
 
-TernaryBit Node::askTernary(const double *d) {
+TernaryBit Node::askTernary(const vector<double> &d) {
 	return this->neuron.askTernary(d);
 }
 

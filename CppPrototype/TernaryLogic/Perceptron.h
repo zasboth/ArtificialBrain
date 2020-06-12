@@ -26,10 +26,10 @@ public:
 	virtual ~Perceptron();
 
 	virtual void teach(bool correct);
-	virtual double askAnalog(const double *d);
+	virtual double askAnalog(const vector<double> &d);
 	virtual TernaryBit askTernary(const Pebble &p);
 	virtual double askAnalog(const Pebble &p);
-	virtual TernaryBit askTernary(const double *d);
+	virtual TernaryBit askTernary(const vector<double> &d);
 
 	double getBias() const {
 		return bias;

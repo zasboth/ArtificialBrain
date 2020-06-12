@@ -37,7 +37,7 @@ TEST(perceptronTest, askAnalog_test) {
 
 TEST(perceptronTest, askTernary_test) {
 	Perceptron arb(3);
-	double pebble[3] { 1, 1, 1 };
+	vector<double> pebble(3, 1);
 	Tbit bit = arb.askTernary(pebble);
 	double res;
 	int counter = 0;

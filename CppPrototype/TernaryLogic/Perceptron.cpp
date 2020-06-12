@@ -34,7 +34,7 @@ void Perceptron::teach(bool correct) {
 	}
 }
 
-double Perceptron::askAnalog(const double *d) {
+double Perceptron::askAnalog(const vector<double> &d) {
 	double result = 0.0;
 	lastAnswer = 0.0;
 	for (int i = 0; i < length; ++i) {
@@ -60,6 +60,6 @@ double Perceptron::askAnalog(const Pebble &p) {
 	return result;
 }
 
-TernaryBit Perceptron::askTernary(const double *d) {
+TernaryBit Perceptron::askTernary(const vector<double> &d) {
 	return Tbit(askAnalog(d), outputTreshold);
 }

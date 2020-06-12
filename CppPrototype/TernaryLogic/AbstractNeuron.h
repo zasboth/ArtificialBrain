@@ -33,8 +33,8 @@ public:
 	virtual ~AbstractNeuron() {
 	}
 
-	virtual double askAnalog(const double d[]) = 0;
-	virtual TernaryBit askTernary(const double d[]) = 0;
+	virtual double askAnalog(const vector<double> &d) = 0;
+	virtual TernaryBit askTernary(const vector<double> &d) = 0;
 	virtual double askAnalog(const Pebble &p) = 0;
 	virtual TernaryBit askTernary(const Pebble &p) = 0;
 	virtual void teach(bool correct) = 0;

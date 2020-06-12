@@ -27,8 +27,8 @@ public:
 	Arbitrator(int length_);
 	virtual ~Arbitrator();
 
-	virtual double askAnalog(const double d[]) override;
-	virtual TernaryBit askTernary(const double d[]) override;
+	virtual double askAnalog(const vector<double> &d) override;
+	virtual TernaryBit askTernary(const vector<double> &d) override;
 	virtual double askAnalog(const Pebble &p) override;
 	virtual TernaryBit askTernary(const Pebble &p) override;
 	virtual void teach(bool correct);

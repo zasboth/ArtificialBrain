@@ -29,7 +29,7 @@ TEST(arbitratorTest, askAnalog_test) {
 
 TEST(arbitratorTest, askTernary_test) {
 	Arbitrator arb(3);
-	double pebble[3]{1,1,1};
+	vector<double> pebble(3, 1);
 	double res = arb.askAnalog(pebble);
 	ASSERT_TRUE(res > 0.5);
 	arb.teach(false);

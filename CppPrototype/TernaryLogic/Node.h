@@ -23,10 +23,10 @@ public:
 	virtual ~Node();
 
 	virtual void teach(bool correct) override;
-	virtual double askAnalog(const double *d) override;
+	virtual double askAnalog(const vector<double> &d) override;
 	virtual TernaryBit askTernary(const Pebble &p) override;
 	virtual double askAnalog(const Pebble &p) override;
-	virtual TernaryBit askTernary(const double *d) override;
+	virtual TernaryBit askTernary(const vector<double> &d) override;
 
 	vector<Node*> getChildren() {
 		return children;
