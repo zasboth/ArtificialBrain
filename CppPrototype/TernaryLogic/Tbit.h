@@ -18,8 +18,6 @@ private:
 
 public:
 	Tbit();
-//	Tbit(const Tbit &b);
-//	Tbit(Tbit &&b);
 	Tbit(double a);
 	Tbit(double a, double treshold);
 	Tbit(TernaryBit bit_);
@@ -31,7 +29,6 @@ public:
 	void setTreshold(double value);
 
 	Tbit &operator=(const double &a);
-//	Tbit &operator=(const Tbit &a);
 	Tbit &operator=(const TernaryBit &a);
 	operator TernaryBit();
 	bool operator==(const Tbit &operand);
