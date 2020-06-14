@@ -20,11 +20,16 @@ TEST(arbitratorTest, askAnalog_test) {
 	pebble[0] = TRUE;
 	pebble[1] = TRUE;
 	pebble[2] = TRUE;
-	double res = arb.askAnalog(pebble);
-	ASSERT_TRUE(res > 0.5);
-	arb.teach(false);
-	TernaryBit bit = arb.askTernary(pebble);
-	ASSERT_TRUE(bit == FALSE);
+	Tbit bit = arb.askTernary(pebble);
+	double res;
+	int counter = 0;
+	do {
+		arb.teach(false);
+		res = arb.askAnalog(pebble);
+		counter++;
+		cout << res << " " << bit << endl;
+	} while (bit != (!Tbit(res)) && counter < 100);
+	ASSERT_TRUE(bit == !Tbit(res));
 }
 
 TEST(arbitratorTest, askTernary_test) {

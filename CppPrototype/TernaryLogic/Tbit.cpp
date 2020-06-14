@@ -39,23 +39,23 @@ Tbit &Tbit::operator=(const double &a) {
 	return *this;
 }
 
-Tbit &Tbit::operator=(const Tbit &a) {
-	bit = a.bit;
-	return *this;
-}
+//Tbit &Tbit::operator=(const Tbit &a) {
+//	bit = a.bit;
+//	return *this;
+//}
 
 Tbit &Tbit::operator=(const TernaryBit &a) {
 	bit = a;
 	return *this;
 }
 
-Tbit::Tbit(const Tbit &b) {
-	bit = b.bit;
-}
-
-Tbit::Tbit(Tbit &&b) {
-	bit = b.bit;
-}
+//Tbit::Tbit(const Tbit &b) {
+//	bit = b.bit;
+//}
+//
+//Tbit::Tbit(Tbit &&b) {
+//	bit = b.bit;
+//}
 
 Tbit Tbit::operator!() {
 	return Tbit(bit * -1);

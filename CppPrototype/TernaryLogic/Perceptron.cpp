@@ -52,9 +52,9 @@ TernaryBit Perceptron::askTernary(const Pebble &p) {
 double Perceptron::askAnalog(const Pebble &p) {
 	double result = 0.0;
 	lastAnswer = 0.0;
+	inputs = p;
 	for (int i = 0; i < length; ++i) {
-		inputs[i] = p[i];
-		result += (weights[i] * p[i]);
+		result += (weights[i] * inputs[i]);
 	}
 	lastAnswer = activation(result);
 	return result;

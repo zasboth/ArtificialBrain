@@ -22,8 +22,6 @@ private:
 
 public:
 	Pebble(int inputLength_);
-	Pebble(const Pebble &p);
-	Pebble(Pebble &&p);
 	virtual ~Pebble();
 
 	double compare(const Pebble &peble);
@@ -31,11 +29,9 @@ public:
 		return inputLength;
 	}
 
-	Pebble &operator =(const Pebble &p);
-	Pebble &operator =(Pebble &&p);
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
-	Tbit operator [](int i) const;
+	Tbit &operator [](const int i);
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */
