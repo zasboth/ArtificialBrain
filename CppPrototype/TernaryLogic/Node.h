@@ -14,8 +14,7 @@
 
 using namespace std;
 
-class Node
-{
+class Node {
 private:
 	AbstarctContainer &container;
 	vector<Node*> children;

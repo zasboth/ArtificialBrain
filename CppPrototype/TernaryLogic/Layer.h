@@ -16,7 +16,6 @@
 
 using namespace std;
 
-
 template<class T>
 class Layer: public AbstarctContainer {
 	static_assert(is_base_of<AbstractNeuron, T>::value, "T must inherit AbstractNeuron");

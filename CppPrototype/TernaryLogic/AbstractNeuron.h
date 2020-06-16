@@ -8,8 +8,11 @@
 #ifndef TERNARYLOGIC_ABSTRACTNEURON_H_
 #define TERNARYLOGIC_ABSTRACTNEURON_H_
 
+#include <Pebble.h>
 #include <Tbit.h>
-#include "pebble.h"
+#include <vector>
+
+using namespace std;
 
 inline double activation(double x) {
 	return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
@@ -23,7 +26,10 @@ protected:
 	double outputTreshold;
 
 public:
-	AbstractNeuron(): length(0), inputTreshold(0), outputTreshold(0){};
+	AbstractNeuron() :
+			length(0), inputTreshold(0), outputTreshold(0) {
+	}
+	;
 
 	AbstractNeuron(const int length_) :
 			length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(

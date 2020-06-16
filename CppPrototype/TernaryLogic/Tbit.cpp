@@ -34,12 +34,12 @@ TernaryBit Tbit::compare(const Tbit &val) {
 	return Tbit(!(bit == MAIBY) * (bit * val.bit) + (bit == MAIBY)).bit;
 }
 
-Tbit &Tbit::operator=(const double &a) {
+Tbit& Tbit::operator=(const double &a) {
 	calcBit(a);
 	return *this;
 }
 
-Tbit &Tbit::operator=(const TernaryBit &a) {
+Tbit& Tbit::operator=(const TernaryBit &a) {
 	bit = a;
 	return *this;
 }
@@ -79,5 +79,4 @@ double Tbit::getTreshold() {
 Tbit::operator TernaryBit() {
 	return bit;
 }
-
 

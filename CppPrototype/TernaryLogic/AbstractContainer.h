@@ -21,13 +21,16 @@ private:
 
 public:
 
-	AbstarctContainer(): inputLength(0), outputLengt() {
+	AbstarctContainer() :
+			inputLength(0), outputLengt() {
 	}
 
-	AbstarctContainer(int inputLength_, int outputLength_): inputLength(inputLength_), outputLengt(outputLength_) {
+	AbstarctContainer(int inputLength_, int outputLength_) :
+			inputLength(inputLength_), outputLengt(outputLength_) {
 	}
 
-	virtual ~AbstarctContainer(){}
+	virtual ~AbstarctContainer() {
+	}
 
 	virtual vector<double> askAnalog(const vector<double> &d) = 0;
 	virtual Pebble askTernary(const vector<double> &d) = 0;

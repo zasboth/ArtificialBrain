@@ -7,12 +7,11 @@
 
 #include <Node.h>
 
-Node::Node(AbstarctContainer &container_): container(container_), children()
-{
+Node::Node(AbstarctContainer &container_) :
+		container(container_), children() {
 
 }
 
 Node::~Node() {
 }
-
 

@@ -11,9 +11,8 @@
 
 using namespace std;
 
-
 Perceptron::Perceptron(const int _length) :
-		AbstractNeuron(_length), weights(_length), inputs(_length)  {
+		AbstractNeuron(_length), weights(_length), inputs(_length) {
 	srand(time(NULL));
 	for (int i = 0; i < length; ++i) {
 		inputs[i] = 0.0;

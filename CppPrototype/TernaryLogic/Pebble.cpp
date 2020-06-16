@@ -35,7 +35,7 @@ bool Pebble::operator !=(const Pebble &o) {
 	return this->compare(o) != inputLength;
 }
 
-Tbit &Pebble::operator [](const int i) {
+Tbit& Pebble::operator [](const int i) {
 	return this->bits[i];
 }
 

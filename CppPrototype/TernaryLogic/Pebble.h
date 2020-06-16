@@ -13,7 +13,6 @@
 
 using namespace std;
 
-
 class Pebble {
 
 private:
@@ -31,7 +30,7 @@ public:
 
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
-	Tbit &operator [](const int i);
+	Tbit& operator [](const int i);
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */
