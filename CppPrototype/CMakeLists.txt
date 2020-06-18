@@ -13,9 +13,13 @@ enable_testing()
 
 include_directories(
 	TernaryLogic
-	lib/googletest
+	lib/googletest-distribution/include
 )
 
-add_subdirectory(lib/googletest)
+link_directories(
+	lib/googletest-distribution/lib
+)
+
+#add_subdirectory(lib)
 add_subdirectory(TernaryLogic)
 add_subdirectory(test)
