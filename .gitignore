@@ -6,3 +6,4 @@ Testing
 googletest
 .vscode
 .vs
+/CppPrototype/lib
