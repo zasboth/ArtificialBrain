@@ -9,15 +9,17 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall")
 add_definitions(--coverage)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} " --coverage")
 
-enable_testing()
+#enable_testing()
 
 include_directories(
 	TernaryLogic
 	lib/googletest-distribution/include
+	lib/boost_1_73_0
 )
 
 link_directories(
 	lib/googletest-distribution/lib
+	lib/boost_1_73_0/lib
 )
 
 #add_subdirectory(lib)
