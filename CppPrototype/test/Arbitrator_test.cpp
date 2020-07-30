@@ -11,7 +11,7 @@
 TEST(arbitratorTest, constructor_test) {
 	Arbitrator res(10);
 	ASSERT_TRUE(res.getLength() == 10);
-	res.~Arbitrator();
+	//res.~Arbitrator();
 }
 
 TEST(arbitratorTest, askAnalog_test) {

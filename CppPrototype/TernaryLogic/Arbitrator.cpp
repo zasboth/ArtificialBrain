@@ -20,9 +20,6 @@ Arbitrator::Arbitrator(int length_) :
 }
 
 Arbitrator::~Arbitrator() {
-	master.~Pebble();
-	lastQuestion.~Pebble();
-	summs.~vector();
 }
 
 double Arbitrator::askAnalog(const vector<double> &d) {

@@ -14,7 +14,6 @@ using namespace std;
 TEST(perceptronTest, constructor_test) {
 	Perceptron res(10);
 	ASSERT_TRUE(res.getLength() == 10);
-	res.~Perceptron();
 }
 
 TEST(perceptronTest, askAnalog_test) {

@@ -13,6 +13,8 @@ add_library(TernaryLogic STATIC
     Layer.cpp
     Node.h
     Node.cpp
+    RootNode.h
+    RootNode.cpp
 )
 
 target_include_directories(TernaryLogic PUBLIC
