@@ -10,14 +10,15 @@
 
 #include <Tbit.h>
 #include <vector>
+#include <string>
+#include <Serializable.h>
 
 using namespace std;
 
-class Pebble {
+class Pebble: public Serializable {
 
 private:
-	int inputLength;
-	vector<Tbit> bits;
+	TernaryBitArray bits;
 
 public:
 	Pebble(int inputLength_);
@@ -25,12 +26,15 @@ public:
 
 	double compare(const Pebble &peble);
 	int getLength() {
-		return inputLength;
+		return int(bits.size());
 	}
 
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
 	Tbit& operator [](const int i);
+	virtual void load(string &s);
+	virtual string save();
+	virtual int version();
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */

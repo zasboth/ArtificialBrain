@@ -12,6 +12,7 @@
 #include <Pebble.h>
 #include <Tbit.h>
 #include <vector>
+#include <Serializable.h>
 
 using namespace std;
 

@@ -8,7 +8,7 @@
 #ifndef TERNARYLOGIC_SERIALIZABLE_H_
 #define TERNARYLOGIC_SERIALIZABLE_H_
 #include <string>
-#include <json/json.h>
+//#include <json/json.h>
 
 using namespace std;
 
@@ -16,11 +16,11 @@ using namespace std;
 class Serializable
 {
 public:
-	virtual Serializable();
-	virtual ~Serializable();
+	virtual ~Serializable(){}
 
 	virtual string save() = 0;
-	virtual void load(string &s) = 0;
+	virtual void load(string& s) = 0;
+	virtual int version() = 0;
 };
 
 #endif /* TERNARYLOGIC_SERIALIZABLE_H_ */

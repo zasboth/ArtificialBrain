@@ -7,6 +7,7 @@
 
 #include <pebble.h>
 #include <iostream>
+#include <string>
 #include "gtest/gtest.h"
 
 using namespace std;
@@ -36,4 +37,19 @@ TEST(PebbleTest, equality_test) {
 	ASSERT_TRUE(p1 != p2);
 	ASSERT_FALSE(p1 == p2);
 	ASSERT_DOUBLE_EQ(8.0, p1.compare(p2));
+}
+
+TEST(PebbleTest, save_test) {
+	Pebble p(10);
+	p[2] = -1;
+	p[3] = 1;
+	string s = p.save();
+	cout << s << endl;
+	ASSERT_TRUE(s.length() > 0);
+	Pebble p2(10);
+	p2.load(s);
+	ASSERT_TRUE(p2[0] == MAIBY);
+	ASSERT_TRUE(p2[2] == FALSE);
+	ASSERT_TRUE(p2[3] == TRUE);
+	ASSERT_TRUE(p2[9] == MAIBY);
 }

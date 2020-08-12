@@ -80,3 +80,30 @@ Tbit::operator TernaryBit() {
 	return bit;
 }
 
+char Tbit::to_char() {
+	switch (bit) {
+		case TRUE:
+			return 'T';
+		case MAIBY:
+			return 'M';
+		case FALSE:
+			return 'F';
+	}
+	return 0;
+}
+
+void Tbit::from_char(char c) {
+	switch (c) {
+		case 'T':
+			bit = TRUE;
+			break;
+		case 'M':
+			bit = MAIBY;
+			break;
+		case 'F':
+			bit = FALSE;
+			break;
+		default:
+			break;
+	}
+}

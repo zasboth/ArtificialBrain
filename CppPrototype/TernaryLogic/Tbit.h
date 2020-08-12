@@ -1,6 +1,8 @@
 #ifndef TBIT_H
 #define TBIT_H
 
+#include <vector>
+
 enum TernaryBit : signed char {
 	TRUE = 1, MAIBY = 0, FALSE = -1
 };
@@ -27,6 +29,8 @@ public:
 	TernaryBit getBit();
 	double getTreshold();
 	void setTreshold(double value);
+	char to_char();
+	void from_char(char c);
 
 	Tbit& operator=(const double &a);
 	Tbit& operator=(const TernaryBit &a);
@@ -37,5 +41,7 @@ public:
 	bool operator!=(const TernaryBit &operand);
 	Tbit operator!();
 };
+
+typedef std::vector<Tbit> TernaryBitArray;
 
 #endif
