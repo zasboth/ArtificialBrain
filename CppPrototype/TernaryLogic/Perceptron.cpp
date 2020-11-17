@@ -8,6 +8,11 @@
 #include <Perceptron.h>
 #include <stdlib.h>
 #include <time.h>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/optional.hpp>
+
+namespace bpt = boost::property_tree;
 
 using namespace std;
 
@@ -62,4 +67,31 @@ double Perceptron::askAnalog(const Pebble &p) {
 
 TernaryBit Perceptron::askTernary(const vector<double> &d) {
 	return Tbit(askAnalog(d), outputTreshold);
+}
+
+std::string Perceptron::save() {
+	bpt::ptree tree;
+	tree.add("bias", bias);
+	tree.add("weights", vector_to_json<double>(weights, [](double v) -> string { return to_string(v);} ));
+	tree.add("lastAnswer", lastAnswer);
+	tree.add("learnRate", learnRate);
+	tree.add("inputs", vector_to_json<double>(inputs, [](double v) -> string { return to_string(v);} ));
+	stringstream ss;
+	bpt::write_json(ss, tree, false);
+	return ss.str();
+}
+
+void Perceptron::load(std::string &s) {
+//	bpt::ptree tree;
+//	stringstream stream(s);
+//	bpt::read_json(stream, tree);
+//	int counter = 0;
+//	for (bpt::ptree::value_type &item : tree.get_child("bits")) {
+//		bits[counter].from_char(item.second.get_value<char>());
+//		counter++;
+//	}
+}
+
+int Perceptron::version() {
+	return 1;
 }

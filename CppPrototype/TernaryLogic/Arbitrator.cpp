@@ -52,3 +52,15 @@ void Arbitrator::teach(bool correct) {
 		master[i] = Tbit(val, inputTreshold);
 	}
 }
+
+std::string Arbitrator::save() {
+
+}
+
+void Arbitrator::load(std::string &s) {
+
+}
+
+int Arbitrator::version() {
+	return 1;
+}

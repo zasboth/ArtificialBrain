@@ -46,6 +46,10 @@ public:
 	void setLearnRate(double learnRate = 1.0) {
 		this->learnRate = learnRate;
 	}
+
+	virtual std::string save();
+	virtual void load(std::string &s);
+	virtual int version();
 };
 
 #endif /* TERNARYLOGIC_PERCEPTRON_H_ */
