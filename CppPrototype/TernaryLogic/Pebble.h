@@ -32,7 +32,7 @@ public:
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
 	Tbit& operator [](const int i);
-	virtual void load(string &s);
+	virtual void load(string s);
 	virtual string save();
 	virtual int version();
 };

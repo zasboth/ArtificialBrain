@@ -49,7 +49,7 @@ Tbit& Pebble::operator [](const int i) {
 	return this->bits[i];
 }
 
-void Pebble::load(string &s) {
+void Pebble::load(string s) {
 	bpt::ptree tree;
 	stringstream stream(s);
 	bpt::read_json(stream, tree);

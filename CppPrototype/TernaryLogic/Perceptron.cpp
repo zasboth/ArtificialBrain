@@ -81,15 +81,16 @@ std::string Perceptron::save() {
 	return ss.str();
 }
 
-void Perceptron::load(std::string &s) {
-//	bpt::ptree tree;
-//	stringstream stream(s);
-//	bpt::read_json(stream, tree);
-//	int counter = 0;
-//	for (bpt::ptree::value_type &item : tree.get_child("bits")) {
-//		bits[counter].from_char(item.second.get_value<char>());
-//		counter++;
-//	}
+void Perceptron::load(std::string s) {
+	bpt::ptree tree;
+	stringstream stream(s);
+	bpt::read_json(stream, tree);
+	int counter = 0;
+	this->bias = tree.get_child("bias");
+	this->weights = json_to_vector<double>("weights", [](string s) -> double {return stod(s);});
+	this->lastAnswer = tree.get_child("lastAnswer");
+	this->learnRate = tree.get_child("learnRate");
+	this->inputs = json_to_vector<double>("inputs", [](string s) -> double {return stod(s);});
 }
 
 int Perceptron::version() {

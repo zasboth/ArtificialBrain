@@ -22,7 +22,7 @@ private:
 	Pebble master;
 	double answer;
 	Pebble lastQuestion;
-	vector<double> summs;
+	vector<double> sums;
 
 public:
 	Arbitrator(int length_);
@@ -34,7 +34,7 @@ public:
 	virtual TernaryBit askTernary(const Pebble &p) override;
 	virtual void teach(bool correct);
 	virtual std::string save();
-	virtual void load(std::string &s);
+	virtual void load(std::string s);
 	virtual int version();
 };
 

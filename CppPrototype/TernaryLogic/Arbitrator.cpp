@@ -8,14 +8,18 @@
 #include <Arbitrator.h>
 #include "pebble.h"
 #include <map>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/optional.hpp>
 
+namespace bpt = boost::property_tree;
 using namespace std;
 
 Arbitrator::Arbitrator(int length_) :
 		AbstractNeuron(length_), master(length_), answer(2 * length_), lastQuestion(
-				length_), summs(length_) {
+				length_), sums(length_) {
 	for (int i = 0; i < length_; ++i) {
-		summs[i] = 0;
+		sums[i] = 0;
 	}
 }
 
@@ -47,18 +51,34 @@ TernaryBit Arbitrator::askTernary(const Pebble &p) {
 void Arbitrator::teach(bool correct) {
 	double mul = correct * answer + !correct * answer * -1;
 	for (int i = 0; i < master.getLength(); ++i) {
-		summs[i] += (mul * lastQuestion[i]);
-		double val = activation(summs[i]);
+		sums[i] += (mul * lastQuestion[i]);
+		double val = activation(sums[i]);
 		master[i] = Tbit(val, inputTreshold);
 	}
 }
 
 std::string Arbitrator::save() {
-
+	bpt::ptree tree;
+	tree.add("answer", answer);
+	tree.add("sums", vector_to_json<double>(sums, [](double v) -> string { return to_string(v);} ));
+	tree.add("master", master.save());
+	tree.add("lastQuestion", lastQuestion.save());
+	stringstream ss;
+	bpt::write_json(ss, tree, false);
+	return ss.str();
 }
 
-void Arbitrator::load(std::string &s) {
-
+void Arbitrator::load(std::string s) {
+	bpt::ptree tree;
+	stringstream stream(s);
+	bpt::read_json(stream, tree);
+	int counter = 0;
+	this->answer = tree.get_child("answer");
+	this->sums = json_to_vector<double>("sums", [](string s) -> double {return stod(s);});
+	string* sr = tree.get_child("lastAnswer");
+	this->master.load(*sr);
+	sr = tree.get_child("lastQuestion");
+	this->lastQuestion.load(*sr);
 }
 
 int Arbitrator::version() {

@@ -19,7 +19,7 @@ public:
 	virtual ~Serializable(){}
 
 	virtual string save() = 0;
-	virtual void load(string& s) = 0;
+	virtual void load(string s) = 0;
 	virtual int version() = 0;
 };
 

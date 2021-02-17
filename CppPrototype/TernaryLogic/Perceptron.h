@@ -48,7 +48,7 @@ public:
 	}
 
 	virtual std::string save();
-	virtual void load(std::string &s);
+	virtual void load(std::string s);
 	virtual int version();
 };
 
