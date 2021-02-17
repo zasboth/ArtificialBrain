@@ -72,13 +72,10 @@ void Arbitrator::load(std::string s) {
 	bpt::ptree tree;
 	stringstream stream(s);
 	bpt::read_json(stream, tree);
-	int counter = 0;
-	this->answer = tree.get_child("answer");
-	this->sums = json_to_vector<double>("sums", [](string s) -> double {return stod(s);});
-	string* sr = tree.get_child("lastAnswer");
-	this->master.load(*sr);
-	sr = tree.get_child("lastQuestion");
-	this->lastQuestion.load(*sr);
+	this->answer = tree.get_child("answer").get_value<double>();
+	this->sums = json_to_vector<double>(tree.get_child("sums").get_value<string>(), [](string s) -> double {return stod(s);});
+	this->master.load(tree.get_child("lastAnswer").get_value<string>());
+	this->lastQuestion.load(tree.get_child("lastQuestion").get_value<string>());
 }
 
 int Arbitrator::version() {
