@@ -8,11 +8,7 @@
 #include <Perceptron.h>
 #include <stdlib.h>
 #include <time.h>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/optional.hpp>
 
-namespace bpt = boost::property_tree;
 
 using namespace std;
 
@@ -70,26 +66,12 @@ TernaryBit Perceptron::askTernary(const vector<double> &d) {
 }
 
 std::string Perceptron::save() {
-	bpt::ptree tree;
-	tree.add("bias", bias);
-	tree.add("weights", vector_to_json<double>(weights, [](double v) -> string { return to_string(v);} ));
-	tree.add("lastAnswer", lastAnswer);
-	tree.add("learnRate", learnRate);
-	tree.add("inputs", vector_to_json<double>(inputs, [](double v) -> string { return to_string(v);} ));
-	stringstream ss;
-	bpt::write_json(ss, tree, false);
-	return ss.str();
+	
+	return "ss.str()";
 }
 
 void Perceptron::load(std::string s) {
-	bpt::ptree tree;
-	stringstream stream(s);
-	bpt::read_json(stream, tree);
-	this->bias = tree.get_child("bias").get_value<double>();
-	this->weights = json_to_vector<double>(tree.get_child("weights").get_value<string>(), [](string s) -> double {return stod(s);});
-	this->lastAnswer = tree.get_child("lastAnswer").get_value<double>();
-	this->learnRate = tree.get_child("learnRate").get_value<double>();
-	this->inputs = json_to_vector<double>(tree.get_child("inputs").get_value<string>(), [](string s) -> double {return stod(s);});
+
 }
 
 int Perceptron::version() {

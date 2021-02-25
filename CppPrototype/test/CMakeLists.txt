@@ -13,8 +13,7 @@ set(Sources
 
 add_executable(tester ${Sources})
 
-add_test(NAME tester
-	COMMAND tester)
+add_test(NAME tester COMMAND tester)
 
 target_link_libraries(tester
 	TernaryLogic

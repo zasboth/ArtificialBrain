@@ -8,10 +8,10 @@
 #include <Arbitrator.h>
 #include <gtest/gtest.h>
 
+
 TEST(arbitratorTest, constructor_test) {
 	Arbitrator res(10);
 	ASSERT_TRUE(res.getLength() == 10);
-	//res.~Arbitrator();
 }
 
 TEST(arbitratorTest, askAnalog_test) {
@@ -40,5 +40,11 @@ TEST(arbitratorTest, askTernary_test) {
 	arb.teach(false);
 	TernaryBit bit = arb.askTernary(pebble);
 	ASSERT_TRUE(bit == FALSE);
+}
+
+TEST(arbitratorTest, save_load_test) {
+	Arbitrator arb(3);
+	string save = arb.save();
+	cout << save << endl;
 }
 

@@ -16,12 +16,10 @@ endif()
 enable_testing()
 
 include_directories(
-	TernaryLogic	
+	TernaryLogic
 )
-
-#link_directories(
-#
-#)
 
 add_subdirectory(TernaryLogic)
 add_subdirectory(test)
+
+target_link_libraries(TernaryLogic jsoncpp)

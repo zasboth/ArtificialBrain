@@ -8,11 +8,8 @@
 #include <Arbitrator.h>
 #include "pebble.h"
 #include <map>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/optional.hpp>
 
-namespace bpt = boost::property_tree;
+
 using namespace std;
 
 Arbitrator::Arbitrator(int length_) :
@@ -58,24 +55,12 @@ void Arbitrator::teach(bool correct) {
 }
 
 std::string Arbitrator::save() {
-	bpt::ptree tree;
-	tree.add("answer", answer);
-	tree.add("sums", vector_to_json<double>(sums, [](double v) -> string { return to_string(v);} ));
-	tree.add("master", master.save());
-	tree.add("lastQuestion", lastQuestion.save());
-	stringstream ss;
-	bpt::write_json(ss, tree, false);
-	return ss.str();
+	
+	return "ss.str()";
 }
 
 void Arbitrator::load(std::string s) {
-	bpt::ptree tree;
-	stringstream stream(s);
-	bpt::read_json(stream, tree);
-	this->answer = tree.get_child("answer").get_value<double>();
-	this->sums = json_to_vector<double>(tree.get_child("sums").get_value<string>(), [](string s) -> double {return stod(s);});
-	this->master.load(tree.get_child("lastAnswer").get_value<string>());
-	this->lastQuestion.load(tree.get_child("lastQuestion").get_value<string>());
+	
 }
 
 int Arbitrator::version() {
