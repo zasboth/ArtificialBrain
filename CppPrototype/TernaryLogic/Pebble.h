@@ -12,6 +12,7 @@
 #include <vector>
 #include <string>
 #include <Serializable.h>
+#include <json/json.h>
 
 using namespace std;
 
@@ -32,9 +33,9 @@ public:
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
 	Tbit& operator [](const int i);
-	virtual void load(string s);
-	virtual string save();
-	virtual int version();
+	virtual void deserialize(Json::Value &node);
+	virtual Json::Value serialize();
+	
 };
 
 #endif /* TERNARYLOGIC_PEBBLE_H_ */

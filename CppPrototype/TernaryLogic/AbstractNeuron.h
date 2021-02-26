@@ -19,7 +19,7 @@ inline double activation(double x) {
 	return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
 }
 
-class AbstractNeuron: Serializable {
+class AbstractNeuron: public Serializable {
 
 protected:
 	const int length;

@@ -47,9 +47,9 @@ public:
 		this->learnRate = learnRate;
 	}
 
-	virtual std::string save();
-	virtual void load(std::string s);
-	virtual int version();
+	virtual Json::Value serialize();
+	virtual void deserialize(Json::Value &node);
+
 };
 
 #endif /* TERNARYLOGIC_PERCEPTRON_H_ */

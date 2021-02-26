@@ -44,7 +44,11 @@ TEST(arbitratorTest, askTernary_test) {
 
 TEST(arbitratorTest, save_load_test) {
 	Arbitrator arb(3);
+	arb.setInputTreshold(10.5);
 	string save = arb.save();
 	cout << save << endl;
+	Arbitrator loaded(3);
+	loaded.load(save);
+	ASSERT_DOUBLE_EQ(arb.getInputTreshold(), loaded.getInputTreshold());
 }
 

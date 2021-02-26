@@ -9,6 +9,7 @@
 #include <sstream>
 #include <cmath>
 #include <json/json.h>
+#include <Serializable.h>
 
 #define EPSILON 0.000001
 #define CMPD(a, b) EPSILON > abs(a-b)
@@ -46,31 +47,13 @@ Tbit& Pebble::operator [](const int i) {
 	return this->bits[i];
 }
 
-void Pebble::load(string s) {
-	Json::Value jv;
-	string error;
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	bool succes = reader->parse(s.c_str(), s.c_str()+s.size(), &jv, &error);
-	if(succes && jv.isArray()){
-		bits.resize(jv.size());
-		for (Json::ArrayIndex i = 0; i < jv.size(); i++)
-		{
-			bits[i].from_char(jv[i].asString()[0]);
-		}
-	} else throw error;
-	delete reader;
+void Pebble::deserialize(Json::Value &node){
+	bits = json_to_vector<Tbit>(node, [](Json::Value v){
+		Tbit t;
+		t.from_char(v.asString()[0]);
+		return t;});
 }
 
-string Pebble::save() {
-	Json::Value jv;
-	for (Json::ArrayIndex i = 0; i < bits.size(); i++)
-	{
-		jv[i] = string(1, bits[i].to_char());
-	}
-	return jv.toStyledString();
-}
-
-int Pebble::version() {
-	return 1;
+Json::Value Pebble::serialize() {
+	return vector_to_json<Tbit>(bits, [](Tbit t){return Json::Value(string(1,t.to_char()));});
 }

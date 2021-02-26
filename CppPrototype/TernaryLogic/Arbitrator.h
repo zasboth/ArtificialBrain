@@ -33,9 +33,8 @@ public:
 	virtual double askAnalog(const Pebble &p) override;
 	virtual TernaryBit askTernary(const Pebble &p) override;
 	virtual void teach(bool correct);
-	virtual std::string save();
-	virtual void load(std::string s);
-	virtual int version();
+	virtual Json::Value serialize();
+	virtual void deserialize(Json::Value &node);
 };
 
 #endif /* TERNARYLOGIC_ARBITRATOR_H_ */

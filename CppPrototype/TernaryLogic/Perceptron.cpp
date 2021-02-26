@@ -65,15 +65,11 @@ TernaryBit Perceptron::askTernary(const vector<double> &d) {
 	return Tbit(askAnalog(d), outputTreshold);
 }
 
-std::string Perceptron::save() {
-	
-	return "ss.str()";
+Json::Value Perceptron::serialize(){
+	Json::Value result;
+	return result;
 }
 
-void Perceptron::load(std::string s) {
+void Perceptron::deserialize(Json::Value &node){
 
-}
-
-int Perceptron::version() {
-	return 1;
 }

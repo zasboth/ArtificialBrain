@@ -8,6 +8,8 @@
 #include <Arbitrator.h>
 #include "pebble.h"
 #include <map>
+#include <json/json.h>
+#include <Serializable.h>
 
 
 using namespace std;
@@ -54,15 +56,22 @@ void Arbitrator::teach(bool correct) {
 	}
 }
 
-std::string Arbitrator::save() {
-	
-	return "ss.str()";
+Json::Value Arbitrator::serialize() {
+	Json::Value node;
+	node["inputTreshold"] = inputTreshold;
+	node["outputTreshold"] = outputTreshold;
+	node["master"] = master.serialize();
+	node["answer"] = answer;
+	node["lastQuestion"] = lastQuestion.serialize();
+	node["sums"] = vector_to_json<double>(sums);
+	return node;
 }
 
-void Arbitrator::load(std::string s) {
-	
-}
-
-int Arbitrator::version() {
-	return 1;
+void Arbitrator::deserialize(Json::Value &node) {
+	inputTreshold = node["inputTreshold"].asDouble();
+	outputTreshold = node["outputTreshold"].asDouble();
+	master.deserialize(node["master"]);
+	answer = node["answer"].asDouble();
+	lastQuestion.deserialize(node["lastQuestion"]);
+	sums = json_to_vector<double>(node["sums"]);	
 }
