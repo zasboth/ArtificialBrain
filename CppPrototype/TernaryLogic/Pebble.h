@@ -33,8 +33,10 @@ public:
 	bool operator ==(const Pebble &o);
 	bool operator !=(const Pebble &o);
 	Tbit& operator [](const int i);
+	operator Serializable*() {return this;}
 	virtual void deserialize(Json::Value &node);
 	virtual Json::Value serialize();
+	virtual bool equal(Serializable* o);
 	
 };
 

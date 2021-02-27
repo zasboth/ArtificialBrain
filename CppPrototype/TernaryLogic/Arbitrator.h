@@ -28,6 +28,8 @@ public:
 	Arbitrator(int length_);
 	virtual ~Arbitrator();
 
+	operator Serializable*(){return this;}
+
 	virtual double askAnalog(const vector<double> &d) override;
 	virtual TernaryBit askTernary(const vector<double> &d) override;
 	virtual double askAnalog(const Pebble &p) override;
@@ -35,6 +37,7 @@ public:
 	virtual void teach(bool correct);
 	virtual Json::Value serialize();
 	virtual void deserialize(Json::Value &node);
+	virtual bool equal(Serializable* o);
 };
 
 #endif /* TERNARYLOGIC_ARBITRATOR_H_ */

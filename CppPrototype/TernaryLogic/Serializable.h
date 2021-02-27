@@ -21,6 +21,7 @@ class Serializable
 public:
 	virtual ~Serializable(){}
 
+	virtual bool equal(Serializable* o) = 0;
 	virtual Json::Value serialize() = 0;
 	virtual void deserialize(Json::Value &node) = 0;
 
@@ -70,5 +71,6 @@ static inline vector<T> json_to_vector(Json::Value &node, T f(Json::Value v)){
 		return result;
 	} else throw "Not an array!";
 }
+
 
 #endif /* TERNARYLOGIC_SERIALIZABLE_H_ */

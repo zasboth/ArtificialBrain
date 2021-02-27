@@ -73,3 +73,7 @@ Json::Value Perceptron::serialize(){
 void Perceptron::deserialize(Json::Value &node){
 
 }
+
+bool Perceptron::equal(Serializable* o){
+	return true;	
+}

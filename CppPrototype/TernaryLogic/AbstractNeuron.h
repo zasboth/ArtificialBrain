@@ -15,29 +15,29 @@
 
 using namespace std;
 
-inline double activation(double x) {
+inline double activation(double x)
+{
 	return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
 }
 
-class AbstractNeuron: public Serializable {
+class AbstractNeuron : public Serializable
+{
 
 protected:
-	const int length;
+	int length;
 	double inputTreshold;
 	double outputTreshold;
 
 public:
-	AbstractNeuron() :
-			length(0), inputTreshold(0), outputTreshold(0) {
-	}
-	;
+	AbstractNeuron() : length(0), inputTreshold(0), outputTreshold(0){};
 
-	AbstractNeuron(const int length_) :
-			length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(
-					activation(length_) * 0.5) {
+	AbstractNeuron(int length_) : length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(
+																									   activation(length_) * 0.5)
+	{
 	}
 
-	virtual ~AbstractNeuron() {
+	virtual ~AbstractNeuron()
+	{
 	}
 
 	virtual double askAnalog(const vector<double> &d) = 0;
@@ -46,24 +46,51 @@ public:
 	virtual TernaryBit askTernary(const Pebble &p) = 0;
 	virtual void teach(bool correct) = 0;
 
-	double getInputTreshold() const {
+	double getInputTreshold() const
+	{
 		return inputTreshold;
 	}
 
-	void setInputTreshold(double inputTreshold = 0) {
+	void setInputTreshold(double inputTreshold = 0)
+	{
 		this->inputTreshold = inputTreshold;
 	}
 
-	const int getLength() const {
+	const int getLength() const
+	{
 		return length;
 	}
 
-	double getOutputTreshold() const {
+	double getOutputTreshold() const
+	{
 		return outputTreshold;
 	}
 
-	void setOutputTreshold(double outputTreshold = 0) {
+	void setOutputTreshold(double outputTreshold = 0)
+	{
 		this->outputTreshold = outputTreshold;
+	}
+
+	virtual bool equal(AbstractNeuron *input){
+		return (length == input->length &&
+			inputTreshold == input->inputTreshold &&
+			outputTreshold == input->outputTreshold);
+	}
+
+	virtual Json::Value serialize()
+	{
+		Json::Value result;
+		result["length"] = length;
+		result["inputTreshold"] = inputTreshold;
+		result["outputTreshold"] = outputTreshold;
+		return result;
+	}
+
+	virtual void deserialize(Json::Value &node)
+	{
+		length = node["length"].asInt();
+		inputTreshold = node["inputTreshold"].asDouble();
+		outputTreshold = node["outputTreshold"].asDouble();
 	}
 };
 

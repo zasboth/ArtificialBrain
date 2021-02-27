@@ -25,6 +25,8 @@ public:
 	Perceptron(const int _length);
 	virtual ~Perceptron();
 
+	operator Serializable*(){return this;}
+
 	virtual void teach(bool correct);
 	virtual double askAnalog(const vector<double> &d);
 	virtual TernaryBit askTernary(const Pebble &p);
@@ -49,6 +51,7 @@ public:
 
 	virtual Json::Value serialize();
 	virtual void deserialize(Json::Value &node);
+	virtual bool equal(Serializable* o);
 
 };
 

@@ -57,3 +57,12 @@ void Pebble::deserialize(Json::Value &node){
 Json::Value Pebble::serialize() {
 	return vector_to_json<Tbit>(bits, [](Tbit t){return Json::Value(string(1,t.to_char()));});
 }
+
+bool Pebble::equal(Serializable *o){
+	Pebble* oo = (Pebble*) o;
+	for (size_t i = 0; i < bits.size(); i++)
+	{
+		if (!(bits[i].to_char() == oo->bits[i].to_char())) return false;
+	}
+	return true;
+}

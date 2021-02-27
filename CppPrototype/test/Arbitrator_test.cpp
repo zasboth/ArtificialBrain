@@ -49,6 +49,5 @@ TEST(arbitratorTest, save_load_test) {
 	cout << save << endl;
 	Arbitrator loaded(3);
 	loaded.load(save);
-	ASSERT_DOUBLE_EQ(arb.getInputTreshold(), loaded.getInputTreshold());
-}
+	ASSERT_TRUE(arb.equal(&loaded));
 

@@ -15,6 +15,9 @@ add_library(TernaryLogic STATIC
     Node.cpp
     RootNode.h
     RootNode.cpp
+    Serializable.h
+    AbstractNeuron.h
+    AbstractContainer.h
 )
 
 target_include_directories(TernaryLogic PUBLIC
