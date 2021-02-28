@@ -18,4 +18,5 @@ add_test(NAME tester COMMAND tester)
 target_link_libraries(tester
 	TernaryLogic
 	gtest
+    jsoncpp
 )

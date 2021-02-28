@@ -44,10 +44,17 @@ TEST(arbitratorTest, askTernary_test) {
 
 TEST(arbitratorTest, save_load_test) {
 	Arbitrator arb(3);
+	Pebble pebble(3);
+	pebble[0] = TRUE;
+	pebble[1] = FALSE;
+	pebble[2] = MAIBY;
+	arb.askTernary(pebble);
+	arb.teach(true);
 	arb.setInputTreshold(10.5);
+	arb.setOutputTreshold(30.15);
 	string save = arb.save();
 	cout << save << endl;
 	Arbitrator loaded(3);
 	loaded.load(save);
 	ASSERT_TRUE(arb.equal(&loaded));
-
+}

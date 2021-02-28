@@ -57,8 +57,7 @@ void Arbitrator::teach(bool correct) {
 }
 
 Json::Value Arbitrator::serialize() {
-	Json::Value node;
-	node["node"] = AbstractNeuron::serialize();
+	Json::Value node = AbstractNeuron::serialize();
 	node["master"] = master.serialize();
 	node["answer"] = answer;
 	node["lastQuestion"] = lastQuestion.serialize();
@@ -67,7 +66,7 @@ Json::Value Arbitrator::serialize() {
 }
 
 void Arbitrator::deserialize(Json::Value &node) {
-	AbstractNeuron::deserialize(node["node"]);
+	AbstractNeuron::deserialize(node);
 	master.deserialize(node["master"]);
 	answer = node["answer"].asDouble();
 	lastQuestion.deserialize(node["lastQuestion"]);

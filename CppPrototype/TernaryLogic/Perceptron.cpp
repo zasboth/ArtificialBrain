@@ -66,14 +66,32 @@ TernaryBit Perceptron::askTernary(const vector<double> &d) {
 }
 
 Json::Value Perceptron::serialize(){
-	Json::Value result;
+	Json::Value result = AbstractNeuron::serialize();
+	result["bias"] = bias;
+	result["weights"] = vector_to_json<double>(weights);
+	result["lastAnswer"] = lastAnswer;
+	result["learnRate"] = learnRate;
+	result["inputs"] = vector_to_json<double>(inputs);
 	return result;
 }
 
 void Perceptron::deserialize(Json::Value &node){
-
+	AbstractNeuron::deserialize(node);
+	bias = node["bias"].asDouble();
+	weights = json_to_vector<double>(node["weights"]);
+	lastAnswer = node["lastAnswer"].asDouble();
+	learnRate = node["learnRate"].asDouble();
+	inputs = json_to_vector<double>(node["inputs"]);
 }
 
 bool Perceptron::equal(Serializable* o){
-	return true;	
+	Perceptron* oo = (Perceptron*)o;
+	return (
+		AbstractNeuron::equal(oo) &&
+		bias == oo->bias &&
+		weights == oo->weights && 
+		lastAnswer == oo->lastAnswer &&
+		learnRate == oo->learnRate &&
+		inputs == oo->inputs
+	);	
 }
