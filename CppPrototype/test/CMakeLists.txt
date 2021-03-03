@@ -15,8 +15,13 @@ add_executable(tester ${Sources})
 
 add_test(NAME tester COMMAND tester)
 
+find_package(GTest CONFIG REQUIRED)
+#target_link_libraries(tester PRIVATE GTest::gmock GTest::gtest GTest::gmock_main GTest::gtest_main)
+
 target_link_libraries(tester
 	TernaryLogic
-	gtest
-    jsoncpp
+	GTest::gmock 
+	GTest::gtest 
+	GTest::gmock_main 
+	GTest::gtest_main
 )

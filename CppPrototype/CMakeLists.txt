@@ -15,6 +15,9 @@ endif()
 
 enable_testing()
 
+find_package(jsoncpp CONFIG REQUIRED)
+#target_link_libraries(TernaryLogic PRIVATE jsoncpp_lib jsoncpp_object)
+
 include_directories(
 	TernaryLogic
 )
@@ -22,4 +25,7 @@ include_directories(
 add_subdirectory(TernaryLogic)
 add_subdirectory(test)
 
-target_link_libraries(TernaryLogic jsoncpp)
+target_link_libraries(TernaryLogic
+	jsoncpp_lib 
+	jsoncpp_object
+)

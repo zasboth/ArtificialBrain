@@ -1,0 +1,16 @@
+{
+    "cmake.generator": "MinGW Makefiles",
+    "files.associations": {
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp",
+        "compare": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+        "xmemory": "cpp",
+        "string": "cpp"
+    }
+}

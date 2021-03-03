@@ -1,0 +1,7 @@
+{
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "C:/_work/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    },
+    "cmake.loggingLevel": "debug",
+    "C_Cpp.loggingLevel": "Debug"
+}
