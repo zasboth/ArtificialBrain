@@ -12,12 +12,13 @@
 #include <Tbit.h>
 #include <vector>
 #include <Serializable.h>
+#include <cmath>
 
 using namespace std;
 
 inline double activation(double x)
 {
-	return x / (1 + (((x > 0) * x) + ((x < 0) * x * -1)));
+	return x / (1 + abs(x));
 }
 
 class AbstractNeuron : public Serializable
