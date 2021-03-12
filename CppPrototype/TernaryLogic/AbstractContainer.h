@@ -1,7 +1,7 @@
 /*
  * AbstarctContainer.h
  *
- *  Created on: 2020. jún. 11.
+ *  Created on: 2020. jï¿½n. 11.
  *      Author: zsolt
  */
 
@@ -11,40 +11,27 @@
 #include <Pebble.h>
 #include <Tbit.h>
 #include <vector>
+#include "AbstractNeuron.h"
 
 using namespace std;
 
+
 class AbstarctContainer {
 private:
-	int inputLength;
-	int outputLengt;
+	
 
 public:
-
-	AbstarctContainer() :
-			inputLength(0), outputLengt() {
-	}
-
-	AbstarctContainer(int inputLength_, int outputLength_) :
-			inputLength(inputLength_), outputLengt(outputLength_) {
-	}
 
 	virtual ~AbstarctContainer() {
 	}
 
-	virtual vector<double> askAnalog(const vector<double> &d) = 0;
-	virtual Pebble askTernary(const vector<double> &d) = 0;
-	virtual vector<double> askAnalog(const Pebble &p) = 0;
-	virtual Pebble askTernary(const Pebble &p) = 0;
-	virtual void teach(bool correct) = 0;
+	virtual void fire() = 0;
+	virtual void teach(bool res) = 0;
+	virtual int getInputLength() const = 0;
+	virtual int getOutputLengt() const = 0;
 
-	int getInputLength() const {
-		return inputLength;
-	}
-
-	int getOutputLengt() const {
-		return outputLengt;
-	}
+	
+	virtual AbstractNeuron* operator [] (int i) = 0; 
 };
 
 #endif /* TERNARYLOGIC_ABSTRACTCONTAINER_H_ */

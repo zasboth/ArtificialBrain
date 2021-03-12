@@ -23,13 +23,7 @@ public:
 	Node(AbstarctContainer &container_);
 	virtual ~Node();
 
-	vector<Node*>& getChildren() {
-		return children;
-	}
-
-	const AbstarctContainer& getContainer() const {
-		return container;
-	}
+	/* s */
 };
 
 #endif /* TERNARYLOGIC_NODE_H_ */
