@@ -18,7 +18,7 @@ using namespace std;
 
 class AbstarctContainer {
 private:
-	
+	vector<AbstarctContainer*> students;
 
 public:
 
@@ -26,10 +26,18 @@ public:
 	}
 
 	virtual void fire() = 0;
-	virtual void teach(bool res) = 0;
 	virtual int getInputLength() const = 0;
 	virtual int getOutputLengt() const = 0;
-
+	
+	inline virtual void teach(bool res){
+		for(auto i : students){
+			i->teach(res);
+		}
+	}
+	
+	inline virtual void registerStudent(AbstarctContainer* container){
+		students.push_back(container);
+	}
 	
 	virtual AbstractNeuron* operator [] (int i) = 0; 
 };
