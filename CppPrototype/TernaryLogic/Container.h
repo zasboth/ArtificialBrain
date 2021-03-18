@@ -9,17 +9,18 @@ template<typename tIn, typename tOut>
 //typename enable_if<(is_same<tIn, double>::value || is_same<tIn, Tbit>::value) && (is_same<tOut, Tbit>::value || is_same<tOut, double>::value ), bool>::type
 class Container : public AbstarctContainer
 {
-static_assert((is_same<tIn, double*>::value || is_same<tIn, Tbit*>::value) && (is_same<tOut, Tbit*>::value || is_same<tOut, double*>::value), "Must be Tbit or double!" );
-private:
+static_assert((is_same<tIn, double>::value || is_same<tIn, Tbit>::value) && (is_same<tOut, Tbit>::value || is_same<tOut, double>::value), "Must be Tbit or double!" );
+protected:
     vector<AbstractNeuron*>	content;
-	vector<tIn> inputs;
-	vector<tOut> outputs;
+	vector<tIn*> inputs;
+	vector<tOut*> outputs;
 
 public:
     Container(int inputSize);
     ~Container();
 
     virtual void fire() = 0;
+	virtual void teach(bool res);
 	inline virtual int getInputLength() const{return inputs.size();};
 	inline virtual int getOutputLengt() const {return content.size();}
 
@@ -37,6 +38,32 @@ public:
 
 };
 
+class AnalogAnalogContainer: public Container<double, double>
+{
+public:
+	AnalogAnalogContainer(int inputSize) : Container(inputSize){}
+	virtual void fire();	
+};
 
+class TernaryAnalogContainer: public Container<Tbit, double>
+{
+public:
+	TernaryAnalogContainer(int inputSize) : Container(inputSize){}
+	virtual void fire();	
+};
+
+class AnalogTernaryContainer: public Container<double, Tbit>
+{
+public:
+	AnalogTernaryContainer(int inputSize) : Container(inputSize){}
+	virtual void fire();	
+};
+
+class TernaryTernaryContainer: public Container<Tbit, Tbit>
+{
+public:
+	TernaryTernaryContainer(int inputSize) : Container(inputSize){}
+	virtual void fire();	
+};
 
 #endif
