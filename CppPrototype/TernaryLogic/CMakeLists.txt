@@ -12,10 +12,6 @@ add_library(TernaryLogic STATIC
     Arbitrator.cpp
     Perceptron.h
     Perceptron.cpp
-    Layer.h
-    Layer.cpp
-    Node.h
-    Node.cpp
     Container.h
     Container.cpp
 )

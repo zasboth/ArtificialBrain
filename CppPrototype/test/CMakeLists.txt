@@ -9,6 +9,7 @@ set(Sources
     arbitrator_test.cpp
     AbstractNeuron_test.cpp
     perceptron_test.cpp
+	container_test.cpp
 )
 
 add_executable(tester ${Sources})

@@ -4,8 +4,7 @@
 template<typename tIn, typename tOut>
 Container<tIn, tOut>::Container(int inputSize) : 
     AbstarctContainer(), content(), inputs(inputSize), outputs()
-{
-    
+{   
 }
 
 template<typename tIn, typename tOut>
@@ -29,6 +28,10 @@ void Container<tIn, tOut>::teach(bool res)
     AbstarctContainer::teach(res);
 }
 
+AnalogAnalogContainer::AnalogAnalogContainer(int inputSize):
+     Container(inputSize){
+}
+
 void AnalogAnalogContainer::fire(){
     vector<double> temp(getInputLength());
     for (size_t i = 0; i < temp.size(); i++){
@@ -37,6 +40,10 @@ void AnalogAnalogContainer::fire(){
     for(size_t i = 0; i < content.size(); i++){
         *outputs[i] =  content[i]->askAnalog(temp);
     }
+}
+
+TernaryAnalogContainer::TernaryAnalogContainer(int inputSize):
+     Container(inputSize){
 }
 
 void TernaryAnalogContainer::fire(){
@@ -49,9 +56,13 @@ void TernaryAnalogContainer::fire(){
     }
 }
 
+AnalogTernaryContainer::AnalogTernaryContainer(int inputSize):
+     Container(inputSize){
+}
+
 void AnalogTernaryContainer::fire(){
     Pebble temp(getInputLength());
-    for (size_t i = 0; i < temp.getLength(); i++){
+    for (int i = 0; i < temp.getLength(); i++){
         temp[i] = *inputs[i];
     }
     for(size_t i = 0; i < content.size(); i++){
@@ -59,9 +70,13 @@ void AnalogTernaryContainer::fire(){
     }
 }
 
+TernaryTernaryContainer::TernaryTernaryContainer(int inputSize):
+     Container(inputSize){
+}
+
 void TernaryTernaryContainer::fire(){
     Pebble temp(getInputLength());
-    for (size_t i = 0; i < temp.getLength(); i++){
+    for (int i = 0; i < temp.getLength(); i++){
         temp[i] = *inputs[i];
     }
     for(size_t i = 0; i < content.size(); i++){

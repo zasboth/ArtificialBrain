@@ -28,7 +28,7 @@ public:
 	int add(AbstractNeuron* neuron);
 
 	template<class T>
-	inline int Add(){
+	inline int add(){
 	    static_assert(std::is_base_of<AbstractNeuron, T>::value, "T must be drived by AbstractNeuron!");
 		content.push_back(new T(this->getInputLength()));
 		return content.size()-1;
@@ -41,28 +41,28 @@ public:
 class AnalogAnalogContainer: public Container<double, double>
 {
 public:
-	AnalogAnalogContainer(int inputSize) : Container(inputSize){}
+	AnalogAnalogContainer(int inputSize);
 	virtual void fire();	
 };
 
 class TernaryAnalogContainer: public Container<Tbit, double>
 {
 public:
-	TernaryAnalogContainer(int inputSize) : Container(inputSize){}
+	TernaryAnalogContainer(int inputSize);
 	virtual void fire();	
 };
 
 class AnalogTernaryContainer: public Container<double, Tbit>
 {
 public:
-	AnalogTernaryContainer(int inputSize) : Container(inputSize){}
+	AnalogTernaryContainer(int inputSize);
 	virtual void fire();	
 };
 
 class TernaryTernaryContainer: public Container<Tbit, Tbit>
 {
 public:
-	TernaryTernaryContainer(int inputSize) : Container(inputSize){}
+	TernaryTernaryContainer(int inputSize);
 	virtual void fire();	
 };
 
