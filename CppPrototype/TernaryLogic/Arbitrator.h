@@ -29,6 +29,7 @@ public:
 	virtual ~Arbitrator();
 
 	operator Serializable*(){return this;}
+	operator AbstractNeuron*(){return this;}
 
 	virtual double askAnalog(const vector<double> &d) override;
 	virtual TernaryBit askTernary(const vector<double> &d) override;

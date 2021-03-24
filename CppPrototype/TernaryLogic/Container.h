@@ -6,7 +6,6 @@
 using namespace std;
 
 template<typename tIn, typename tOut>
-//typename enable_if<(is_same<tIn, double>::value || is_same<tIn, Tbit>::value) && (is_same<tOut, Tbit>::value || is_same<tOut, double>::value ), bool>::type
 class Container : public AbstarctContainer
 {
 static_assert((is_same<tIn, double>::value || is_same<tIn, Tbit>::value) && (is_same<tOut, Tbit>::value || is_same<tOut, double>::value), "Must be Tbit or double!" );
@@ -25,14 +24,15 @@ public:
 	inline virtual int getOutputLengt() const {return content.size();}
 
 	inline void inputPointer(int index, tIn pInput){ inputs[index] = pInput;}
-	int add(AbstractNeuron* neuron);
-
+	virtual int add(AbstractNeuron* neuron);
+	
+	//template<class T, typename enable_if<is_base_of<AbstractNeuron, T>::value>::type* = nullptr>
 	template<class T>
-	inline int add(){
-	    static_assert(std::is_base_of<AbstractNeuron, T>::value, "T must be drived by AbstractNeuron!");
-		content.push_back(new T(this->getInputLength()));
-		return content.size()-1;
+	int add(){
+		static_assert(std::is_base_of<AbstractNeuron, T>::value, "T must be drived by AbstractNeuron!");
+		return add(new T(this->getInputLength()));
 	}
+
 
 	AbstractNeuron* operator [] (int i) {return content[i];} 
 

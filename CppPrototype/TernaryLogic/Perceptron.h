@@ -26,6 +26,7 @@ public:
 	virtual ~Perceptron();
 
 	operator Serializable*(){return this;}
+	operator AbstractNeuron*(){return this;}
 
 	virtual void teach(bool correct);
 	virtual double askAnalog(const vector<double> &d);

@@ -2,6 +2,8 @@
 #include "AbstractContainer.h"
 #include "Container.h"
 #include "Arbitrator.h"
+#include "AbstractNeuron.h"
+#include "Perceptron.h"
 
 TEST(containerTest, constructor_test) {
     const int len = 12;
@@ -16,4 +18,14 @@ TEST(containerTest, constructor_test) {
 
     AnalogAnalogContainer aac(len);
     ASSERT_EQ(len, aac.getInputLength());
+}
+
+TEST(containerTest, add_test) {
+    TernaryAnalogContainer tac(5);
+    Arbitrator* a = new Arbitrator(5);
+    tac.add(a);
+    ASSERT_EQ(1, tac.getOutputLengt());
+    tac.add<Perceptron>();
+    ASSERT_EQ(2, tac.getOutputLengt());
+    //tac.add<Container>();
 }
