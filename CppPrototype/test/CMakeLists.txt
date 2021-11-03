@@ -5,10 +5,10 @@ enable_testing()
 set(Sources
 	main.cpp
     tbit_test.cpp
-    pebble_test.cpp
-    arbitrator_test.cpp
+    Pebble_test.cpp
+    Arbitrator_test.cpp
     AbstractNeuron_test.cpp
-    perceptron_test.cpp
+    Perceptron_test.cpp
 	container_test.cpp
 )
 
