@@ -6,7 +6,7 @@
  */
 #include <AbstractNeuron.h>
 #include <Arbitrator.h>
-#include "pebble.h"
+#include "Pebble.h"
 #include <map>
 #include <json/json.h>
 #include <Serializable.h>

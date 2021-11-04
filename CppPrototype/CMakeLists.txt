@@ -20,12 +20,14 @@ find_package(jsoncpp CONFIG REQUIRED)
 
 include_directories(
 	TernaryLogic
+	lib
 )
 
 add_subdirectory(TernaryLogic)
 add_subdirectory(test)
 
-target_link_libraries(TernaryLogic
+target_link_libraries(
+	TernaryLogic
 	jsoncpp_lib 
-	jsoncpp_object
+	#jsoncpp_object
 )
