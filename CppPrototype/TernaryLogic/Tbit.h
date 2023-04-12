@@ -3,7 +3,7 @@
 
 #include <vector>
 
-enum TernaryBit : signed char {
+enum TernaryBit : char {
 	TRUE = 1, MAIBY = 0, FALSE = -1
 };
 
@@ -32,9 +32,9 @@ public:
 	char to_char();
 	void from_char(char c);
 
+	operator double();
 	Tbit& operator=(const double &a);
 	Tbit& operator=(const TernaryBit &a);
-	operator TernaryBit();
 	bool operator==(const Tbit &operand);
 	bool operator!=(const Tbit &operand);
 	bool operator==(const TernaryBit &operand);

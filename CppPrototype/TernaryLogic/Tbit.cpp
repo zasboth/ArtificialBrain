@@ -76,8 +76,8 @@ double Tbit::getTreshold() {
 	return treshold;
 }
 
-Tbit::operator TernaryBit() {
-	return bit;
+Tbit::operator double() {
+	return double(bit);
 }
 
 char Tbit::to_char() {

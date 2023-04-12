@@ -46,7 +46,8 @@ double Perceptron::askAnalog(const vector<double> &d) {
 }
 
 TernaryBit Perceptron::askTernary(const Pebble &p) {
-	return Tbit(askAnalog(p), outputTreshold);
+	auto result = Tbit(askAnalog(p), outputTreshold);
+	return result.getBit();
 }
 
 double Perceptron::askAnalog(const Pebble &p) {
@@ -62,7 +63,8 @@ double Perceptron::askAnalog(const Pebble &p) {
 }
 
 TernaryBit Perceptron::askTernary(const vector<double> &d) {
-	return Tbit(askAnalog(d), outputTreshold);
+	auto result = Tbit(askAnalog(d), outputTreshold);
+	return result.getBit();
 }
 
 Json::Value Perceptron::serialize(){

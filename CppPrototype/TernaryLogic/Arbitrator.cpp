@@ -34,7 +34,8 @@ double Arbitrator::askAnalog(const vector<double> &d) {
 }
 
 TernaryBit Arbitrator::askTernary(const vector<double> &d) {
-	return Tbit(askAnalog(d), outputTreshold);
+	auto result = Tbit(askAnalog(d), outputTreshold);
+	return result.getBit();
 }
 
 double Arbitrator::askAnalog(const Pebble &p) {
@@ -44,7 +45,8 @@ double Arbitrator::askAnalog(const Pebble &p) {
 }
 
 TernaryBit Arbitrator::askTernary(const Pebble &p) {
-	return Tbit(askAnalog(p), outputTreshold);
+	auto result = Tbit(askAnalog(p), outputTreshold);
+	return result.getBit();
 }
 
 void Arbitrator::teach(bool correct) {
