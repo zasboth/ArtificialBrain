@@ -8,8 +8,8 @@
 #ifndef TERNARYLOGIC_ABSTRACTCONTAINER_H_
 #define TERNARYLOGIC_ABSTRACTCONTAINER_H_
 
-#include <Pebble.h>
-#include <Tbit.h>
+#include "Pebble.h"
+#include "Tbit.h"
 #include <vector>
 #include "AbstractNeuron.h"
 

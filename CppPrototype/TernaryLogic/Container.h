@@ -16,7 +16,7 @@ protected:
 
 public:
     Container(int inputSize);
-    ~Container();
+    virtual ~Container();
 
     virtual void fire() = 0;
 	virtual void teach(bool res);

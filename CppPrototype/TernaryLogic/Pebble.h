@@ -8,11 +8,11 @@
 #ifndef TERNARYLOGIC_PEBBLE_H_
 #define TERNARYLOGIC_PEBBLE_H_
 
-#include <Tbit.h>
+#include <json/json.h>
 #include <vector>
 #include <string>
-#include <Serializable.h>
-#include <json/json.h>
+#include "Tbit.h"
+#include "Serializable.h"
 
 using namespace std;
 

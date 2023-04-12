@@ -8,9 +8,9 @@
 #ifndef TERNARYLOGIC_NODE_H_
 #define TERNARYLOGIC_NODE_H_
 
-#include <Layer.h>
-#include <AbstractContainer.h>
 #include <vector>
+#include "Layer.h"
+#include "AbstractContainer.h"
 
 using namespace std;
 

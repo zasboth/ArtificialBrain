@@ -8,10 +8,10 @@
 #ifndef TERNARYLOGIC_PERCEPTRON_H_
 #define TERNARYLOGIC_PERCEPTRON_H_
 
-#include <AbstractNeuron.h>
-#include <Pebble.h>
-#include <Tbit.h>
 #include <vector>
+#include "AbstractNeuron.h"
+#include "Pebble.h"
+#include "Tbit.h"
 
 class Perceptron: public AbstractNeuron {
 private:

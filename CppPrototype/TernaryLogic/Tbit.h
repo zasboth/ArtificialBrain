@@ -23,7 +23,7 @@ public:
 	Tbit(double a);
 	Tbit(double a, double treshold);
 	Tbit(TernaryBit bit_);
-	~Tbit();
+	virtual ~Tbit();
 
 	TernaryBit compare(const Tbit &val);
 	TernaryBit getBit();

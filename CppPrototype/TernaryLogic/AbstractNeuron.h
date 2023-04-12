@@ -8,10 +8,10 @@
 #ifndef TERNARYLOGIC_ABSTRACTNEURON_H_
 #define TERNARYLOGIC_ABSTRACTNEURON_H_
 
-#include <Pebble.h>
-#include <Tbit.h>
+#include "Pebble.h"
+#include "Tbit.h"
+#include "Serializable.h"
 #include <vector>
-#include <Serializable.h>
 #include <cmath>
 
 using namespace std;
@@ -32,8 +32,8 @@ protected:
 public:
 	AbstractNeuron() : length(0), inputTreshold(0), outputTreshold(0){};
 
-	AbstractNeuron(int length_) : length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(
-																									   activation(length_) * 0.5)
+	AbstractNeuron(int length_) : 
+		length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(activation(length_) * 0.5)
 	{
 	}
 
