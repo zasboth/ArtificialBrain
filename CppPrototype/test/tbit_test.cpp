@@ -11,7 +11,7 @@ TEST(TbitTest, Create) {
 
 TEST(TbitTest, Create_with_equal) {
 	Tbit eq(TernaryBit::TRUE);
-	Tbit bit = 60;
+	Tbit bit(60.0);
 	ASSERT_TRUE(bit.getBit() == eq.getBit());
 	eq = MAIBY;
 	bit = 0;

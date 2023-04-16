@@ -78,7 +78,7 @@ public:
 			outputTreshold == input->outputTreshold);
 	}
 
-	virtual Json::Value serialize()
+	virtual Json::Value serialize() override
 	{
 		Json::Value result;
 		result["length"] = length;
@@ -87,7 +87,7 @@ public:
 		return result;
 	}
 
-	virtual void deserialize(Json::Value &node)
+	virtual void deserialize(Json::Value &node) override
 	{
 		length = node["length"].asInt();
 		inputTreshold = node["inputTreshold"].asDouble();

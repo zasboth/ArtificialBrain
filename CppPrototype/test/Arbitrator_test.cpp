@@ -20,7 +20,7 @@ TEST(arbitratorTest, askAnalog_test) {
 	pebble[0] = TRUE;
 	pebble[1] = TRUE;
 	pebble[2] = TRUE;
-	Tbit bit = arb.askTernary(pebble);
+	Tbit bit(arb.askTernary(pebble));
 	double res;
 	int counter = 0;
 	do {

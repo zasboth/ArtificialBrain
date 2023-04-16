@@ -76,9 +76,9 @@ void Arbitrator::deserialize(Json::Value &node) {
 }
 
 bool Arbitrator::equal(Serializable* o){
-	Arbitrator* oo = (Arbitrator*) o;
+	Arbitrator* oo = static_cast<Arbitrator*>(o);
 	return 	(
-		AbstractNeuron::equal((AbstractNeuron*)oo) &&
+		AbstractNeuron::equal(static_cast<AbstractNeuron*>(oo)) &&
 		master.equal(oo->master) &&
 		(answer == oo->answer) &&
 		lastQuestion.equal(oo->lastQuestion) &&

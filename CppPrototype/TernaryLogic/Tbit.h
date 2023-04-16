@@ -3,7 +3,7 @@
 
 #include <vector>
 
-enum TernaryBit : char {
+enum TernaryBit : signed char {
 	TRUE = 1, MAIBY = 0, FALSE = -1
 };
 
@@ -20,12 +20,13 @@ private:
 
 public:
 	Tbit();
-	Tbit(double a);
+	explicit Tbit(double a);
 	Tbit(double a, double treshold);
-	Tbit(TernaryBit bit_);
+	explicit Tbit(TernaryBit bit_);
 	virtual ~Tbit();
 
 	TernaryBit compare(const Tbit &val);
+	TernaryBit compare(const TernaryBit &val);
 	TernaryBit getBit();
 	double getTreshold();
 	void setTreshold(double value);
@@ -33,7 +34,7 @@ public:
 	void from_char(char c);
 
 	operator double();
-	Tbit& operator=(const double &a);
+	Tbit& operator=(double a);
 	Tbit& operator=(const TernaryBit &a);
 	bool operator==(const Tbit &operand);
 	bool operator!=(const Tbit &operand);
