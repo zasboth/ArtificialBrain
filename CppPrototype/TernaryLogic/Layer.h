@@ -1,18 +1,18 @@
 /*
  * Layer.h
  *
- *  Created on: 2020. jún. 11.
+ *  Created on: 2020. jï¿½n. 11.
  *      Author: zsolt
  */
 
 #ifndef TERNARYLOGIC_LAYER_H_
 #define TERNARYLOGIC_LAYER_H_
 
-#include <AbstractContainer.h>
-#include <AbstractNeuron.h>
-#include <Pebble.h>
-#include <Tbit.h>
 #include <vector>
+#include "AbstractContainer.h"
+#include "AbstractNeuron.h"
+#include "Pebble.h"
+#include "Tbit.h"
 
 using namespace std;
 

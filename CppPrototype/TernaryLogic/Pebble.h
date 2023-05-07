@@ -8,11 +8,11 @@
 #ifndef TERNARYLOGIC_PEBBLE_H_
 #define TERNARYLOGIC_PEBBLE_H_
 
-#include <Tbit.h>
+#include <json/json.h>
 #include <vector>
 #include <string>
-#include <Serializable.h>
-#include <json/json.h>
+#include "Tbit.h"
+#include "Serializable.h"
 
 using namespace std;
 
@@ -22,7 +22,7 @@ private:
 	TernaryBitArray bits;
 
 public:
-	Pebble(int inputLength_);
+	explicit Pebble(int inputLength_);
 	virtual ~Pebble();
 
 	double compare(const Pebble &peble);
@@ -34,9 +34,9 @@ public:
 	bool operator !=(const Pebble &o);
 	Tbit& operator [](const int i);
 	operator Serializable*() {return this;}
-	virtual void deserialize(Json::Value &node);
-	virtual Json::Value serialize();
-	virtual bool equal(Serializable* o);
+	virtual void deserialize(Json::Value &node) override;
+	virtual Json::Value serialize() override;
+	virtual bool equal(Serializable* o) override;
 	
 };
 

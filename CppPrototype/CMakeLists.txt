@@ -4,10 +4,11 @@ project(TernaryLogic VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 20)
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+	set(CMAKE_CXX_STANDARD 20)
 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -v -Wall -O0 ")
 	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -v -Wall ")
-	SET(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage")
-	SET(GCC_COVERAGE_LINK_FLAGS    "-lgcov")
+	set(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage")
+	set(GCC_COVERAGE_LINK_FLAGS    "-lgcov")
 	add_definitions(--coverage)
 	set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} " --coverage")
 	Message(STATUS "Debug flags: " ${CMAKE_CXX_FLAGS_DEBUG})
@@ -22,12 +23,14 @@ find_package(jsoncpp CONFIG REQUIRED)
 
 include_directories(
 	TernaryLogic
+	lib
 )
 
 add_subdirectory(TernaryLogic)
 add_subdirectory(test)
 
-target_link_libraries(TernaryLogic
+target_link_libraries(
+	TernaryLogic
 	jsoncpp_lib 
-	jsoncpp_object
+	#jsoncpp_object
 )

@@ -5,7 +5,7 @@
  *      Author: zsolt
  */
 
-#include <pebble.h>
+#include <Pebble.h>
 #include <iostream>
 #include <string>
 #include "gtest/gtest.h"

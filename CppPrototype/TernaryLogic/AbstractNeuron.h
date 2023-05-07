@@ -8,10 +8,10 @@
 #ifndef TERNARYLOGIC_ABSTRACTNEURON_H_
 #define TERNARYLOGIC_ABSTRACTNEURON_H_
 
-#include <Pebble.h>
-#include <Tbit.h>
+#include "Pebble.h"
+#include "Tbit.h"
+#include "Serializable.h"
 #include <vector>
-#include <Serializable.h>
 #include <cmath>
 
 using namespace std;
@@ -32,8 +32,8 @@ protected:
 public:
 	AbstractNeuron() : length(0), inputTreshold(0), outputTreshold(0){};
 
-	AbstractNeuron(int length_) : length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(
-																									   activation(length_) * 0.5)
+	AbstractNeuron(int length_) : 
+		length(length_), inputTreshold(activation(length_) * 0.5), outputTreshold(activation(length_) * 0.5)
 	{
 	}
 
@@ -78,7 +78,7 @@ public:
 			outputTreshold == input->outputTreshold);
 	}
 
-	virtual Json::Value serialize()
+	virtual Json::Value serialize() override
 	{
 		Json::Value result;
 		result["length"] = length;
@@ -87,7 +87,7 @@ public:
 		return result;
 	}
 
-	virtual void deserialize(Json::Value &node)
+	virtual void deserialize(Json::Value &node) override
 	{
 		length = node["length"].asInt();
 		inputTreshold = node["inputTreshold"].asDouble();

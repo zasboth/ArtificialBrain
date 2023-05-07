@@ -8,11 +8,11 @@
 #ifndef TERNARYLOGIC_ARBITRATOR_H_
 #define TERNARYLOGIC_ARBITRATOR_H_
 
-#include <AbstractNeuron.h>
-#include <Pebble.h>
-#include <Tbit.h>
 #include <vector>
-#include <Serializable.h>
+#include "AbstractNeuron.h"
+#include "Pebble.h"
+#include "Tbit.h"
+#include "Serializable.h"
 
 using namespace std;
 

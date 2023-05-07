@@ -6,7 +6,7 @@
  */
 #include <AbstractNeuron.h>
 #include <Arbitrator.h>
-#include "pebble.h"
+#include "Pebble.h"
 #include <map>
 #include <json/json.h>
 #include <Serializable.h>
@@ -34,7 +34,8 @@ double Arbitrator::askAnalog(const vector<double> &d) {
 }
 
 TernaryBit Arbitrator::askTernary(const vector<double> &d) {
-	return Tbit(askAnalog(d), outputTreshold);
+	auto result = Tbit(askAnalog(d), outputTreshold);
+	return result.getBit();
 }
 
 double Arbitrator::askAnalog(const Pebble &p) {
@@ -44,7 +45,8 @@ double Arbitrator::askAnalog(const Pebble &p) {
 }
 
 TernaryBit Arbitrator::askTernary(const Pebble &p) {
-	return Tbit(askAnalog(p), outputTreshold);
+	auto result = Tbit(askAnalog(p), outputTreshold);
+	return result.getBit();
 }
 
 void Arbitrator::teach(bool correct) {
@@ -74,9 +76,9 @@ void Arbitrator::deserialize(Json::Value &node) {
 }
 
 bool Arbitrator::equal(Serializable* o){
-	Arbitrator* oo = (Arbitrator*) o;
+	Arbitrator* oo = static_cast<Arbitrator*>(o);
 	return 	(
-		AbstractNeuron::equal((AbstractNeuron*)oo) &&
+		AbstractNeuron::equal(static_cast<AbstractNeuron*>(oo)) &&
 		master.equal(oo->master) &&
 		(answer == oo->answer) &&
 		lastQuestion.equal(oo->lastQuestion) &&

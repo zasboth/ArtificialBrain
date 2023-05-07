@@ -20,21 +20,22 @@ private:
 
 public:
 	Tbit();
-	Tbit(double a);
+	explicit Tbit(double a);
 	Tbit(double a, double treshold);
-	Tbit(TernaryBit bit_);
-	~Tbit();
+	explicit Tbit(TernaryBit bit_);
+	virtual ~Tbit();
 
 	TernaryBit compare(const Tbit &val);
+	TernaryBit compare(const TernaryBit &val);
 	TernaryBit getBit();
 	double getTreshold();
 	void setTreshold(double value);
 	char to_char();
 	void from_char(char c);
 
-	Tbit& operator=(const double &a);
+	operator double();
+	Tbit& operator=(double a);
 	Tbit& operator=(const TernaryBit &a);
-	operator TernaryBit();
 	bool operator==(const Tbit &operand);
 	bool operator!=(const Tbit &operand);
 	bool operator==(const TernaryBit &operand);
