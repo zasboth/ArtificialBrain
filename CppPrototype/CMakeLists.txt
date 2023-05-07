@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.15.0)
 project(TernaryLogic VERSION 0.1.0)
 
+set(CMAKE_CXX_STANDARD 20)
+
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -v -Wall -O0 ")
 	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -v -Wall ")
