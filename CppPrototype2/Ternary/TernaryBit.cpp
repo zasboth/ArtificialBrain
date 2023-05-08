@@ -1,5 +1,6 @@
 #include "TernaryBit.hpp"
 #include <iostream>
+//#include <concepts>
 
 TernaryBit::TernaryBit() : _bit{0}, _digits(MAYBE)
 {
@@ -60,12 +61,6 @@ bool TernaryBit::high()
     return _digits.HighBit;
 }
 
-template <typename T>
-TernaryBit::TernaryBit(T op)
-{
-    _bit = static_cast<BIT>(2 * (op / (1 + abs(op))));
-    _digits = _bit;
-}
 
 TernaryBit::Digits::Digits(BIT bit)
 {

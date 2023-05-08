@@ -10,10 +10,15 @@ int main(){
     TernaryBit::BIT b = d;
 
     TernaryBit tb{b};
+    
 
-    cout << "high: " << d.HighBit << " low: " << d.LowBit << endl;
-    cout << "Bit: " << static_cast<int>(b) << endl;
-    cout << tb << endl;
+    std::cout << "high: " << d.HighBit << " low: " << d.LowBit << endl;
+    std::cout << "Bit: " << static_cast<int>(b) << endl;
+    std::cout << tb << endl;
+    
+    double d2 = -12;
+    TernaryBit tb2(d2);
+    std::cout << tb2 << endl;
 
     bitset<8> bs;
     bs[0] = tb.low();

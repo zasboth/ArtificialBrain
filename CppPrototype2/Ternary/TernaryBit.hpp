@@ -2,6 +2,11 @@
 
 #include <type_traits>
 #include <iostream>
+//#include <concepts>
+#include <type_traits>
+
+template<typename T>
+concept signed_aritmetic = std::is_signed_v<T>;
 
 struct TernaryBit
 {
@@ -24,16 +29,17 @@ public:
         operator BIT() const;
         TernaryBit::Digits operator=(const BIT &bit);
     };
-
+         
     TernaryBit();
 
     TernaryBit(bool high, bool low);
 
     explicit TernaryBit(BIT bit);
-
-    template <typename T>
-    explicit TernaryBit(T op);
-
+    
+    TernaryBit(signed_aritmetic auto op): TernaryBit(op<0, op>0)
+    {
+    };
+    
     operator BIT();
     operator Digits();
     TernaryBit operator!();
@@ -49,3 +55,4 @@ private:
     Digits _digits;
     BIT _bit;
 };
+
