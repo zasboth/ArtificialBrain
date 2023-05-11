@@ -36,9 +36,7 @@ public:
 
     explicit TernaryBit(BIT bit);
     
-    TernaryBit(signed_aritmetic auto op): TernaryBit(op<0, op>0)
-    {
-    };
+    explicit TernaryBit(signed_aritmetic auto op): TernaryBit(op<0, op>0){};
     
     operator BIT();
     operator Digits();
