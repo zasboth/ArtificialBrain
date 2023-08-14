@@ -4,12 +4,11 @@
 #include "TernaryBit.hpp"
 #include <concepts>
 
-template <std::floating_point T>
+template <std::floating_point T, size_t Size>
 class Perceptron
 {
 public:
-    explicit Perceptron(size_t n): length(n){
-        weights = new T[n];
+    Perceptron(){
         for (size_t i = 0; i < n; i++)
         {
             weights[i] = random(-100, 100);
@@ -18,32 +17,34 @@ public:
     }
 
     Perceptron(const Perceptron &p): length(p.length){
-        weights = new T[p.length];
-        for (int i = 0; i < sizeof(p.weights); i++)
-        {
-            weights[i] = p.weights[i];
-        }
-        bias = p.bias;
-    }
-
-    ~Perceptron(){
-        delete[] weights;
-        weights = nullptr;
-    }
-
-    operator=(const Perceptron &p){
-        length = p.length;
-        weights = new T[p.length];
-        for (int i = 0; i < sizeof(p.weights); i++)
+        for (size_t i = 0; i < sizeof(p.weights); i++)
         {
             weights[i] = p.weights[i];
         }
         bias = p.bias;
     }
     
-    TernaryBit feedForward(T *inputs){
+       
+    ~Perceptron(){}
+
+    operator=(const Perceptron &p){
+        length = p.length;
+        weights = p.weights;
+        for (size_t i = 0; i < sizeof(p.weights); i++)
+        {
+            weights[i] = p.weights[i];
+        }
+        bias = p.bias;
+    }
+    
+    TernaryBit feedForward(T[Size] &inputs){
+        sum += feedForwardA(inputs);
+        return TernaryBit(sum);
+    }
+
+    T feedForwardA(T[Size] &inputs){
         T sum = 0;
-        for (int i = 0; i < sizeof(inputs); i++)
+        for (size_t i = 0; i < length; i++)
         {
             sum += inputs[i] * weights[i];
         }
@@ -51,11 +52,11 @@ public:
         return activation(sum);
     }
 
-    void train(T *inputs, TernaryBit target)
+    void train(T[Size] &inputs, TernaryBit target)
     {
-        TernaryBit guess = feedForward(inputs);
+        T guess = feedForwardA(inputs);
         T error = target - guess;
-        for (int i = 0; i < sizeof(inputs); i++)
+        for (size_t i = 0; i < length; i++)
         {
             weights[i] += error * inputs[i];
         }
@@ -63,12 +64,13 @@ public:
     }
 
 private:
-    T *weights;
+    T weights[Size];
     T bias;
-    size_t length;
-    extern TernaryBit activation(T sum)
+    size_t length = Size;
+
+    extern T activation(T sum)
     {
-        return TernaryBit(sum<0, sum>0);
+        return sum/(1+abs(sum));
     }
 };
 

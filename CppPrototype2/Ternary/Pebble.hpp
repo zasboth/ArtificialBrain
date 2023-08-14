@@ -14,6 +14,7 @@ public:
 
     
 private:
+    bitset<Size*2> bits;
     size_t length = Size;
     TernaryBit[Size] bits;
 };
