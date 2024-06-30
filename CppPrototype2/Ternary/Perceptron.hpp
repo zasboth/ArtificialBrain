@@ -3,12 +3,13 @@
 #include <iostream>
 #include "TernaryBit.hpp"
 #include <concepts>
+#include "Pebble.hpp"
 
 template <std::floating_point T, size_t Size>
-class Perceptron
+class Perceptron: public Pebble
 {
 public:
-    Perceptron(){
+    Perceptron(): Pebble<Size>(){
         for (size_t i = 0; i < n; i++)
         {
             weights[i] = random(-100, 100);
@@ -66,7 +67,6 @@ public:
 private:
     T weights[Size];
     T bias;
-    size_t length = Size;
 
     extern T activation(T sum)
     {

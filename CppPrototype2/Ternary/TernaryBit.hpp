@@ -14,7 +14,7 @@ public:
     enum BIT : char
     {
         TRUE = 1, //0b01
-        MAYBE = 0, //0b00
+        MAYBE = 0, //0b00, 0b11
         FALSE = -1 //0b10
     };
 

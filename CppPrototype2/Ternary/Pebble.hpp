@@ -9,22 +9,19 @@ template <size_t Size>
 class Pebble
 {
 public:
-    Pebble();
-    ~Pebble(){};
+    struct Input
+    {
+        const size_t size = Size;
+        TernaryBit inputs[Size];
+    };
+    Pebble() = default;
+    virtual ~Pebble() = 0;
 
-    
-private:
-    bitset<Size*2> bits;
+    virtual TernaryBit feedForward(Input *input) = 0;
+    virtual void train(Input *input, TernaryBit target) = 0;
+
+protected:
     size_t length = Size;
-    TernaryBit[Size] bits;
 };
 
-template <size_t Size>
-inline Pebble<Size>::Pebble()
-{
-    for (size_t i = 0; i < Size; i++)
-    {
-        bits[i] = TernaryBit();
-    }
-}
 
