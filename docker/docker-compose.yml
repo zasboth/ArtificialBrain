@@ -1,0 +1,16 @@
+services:
+  ab_dev:
+    image: ab_devel
+    build: 
+      context: .  
+      args:
+        - U_USER=$USER
+        - U_GID=$U_GID
+        - U_UID=$U_UID
+    network_mode: bridge
+    privileged: true
+    volumes:
+      - ../:/src:rw
+      - $HOME:$HOME:ro
+    working_dir: /src
+    user: $USER

@@ -7,7 +7,7 @@ Testing
 googletest
 .vscode/
 .vs/
-/CppPrototype/lib/
+lib/
 lib.zip
 cmake_install.cmake
 Makefile
